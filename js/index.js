@@ -1,10 +1,10 @@
 
 
-const opgeslagenRoutes = document.getElementById('button1');
+const opgeslagenRoutes = document.getElementById('nieuwe-route-button');
 opgeslagenRoutes.addEventListener('click', sendRouteplanner);
 
 
-const nieuweRoutes = document.getElementById('button2');
+const nieuweRoutes = document.getElementById('opgeslagen-route-button');
 nieuweRoutes.addEventListener('click', sendFavorieteroutes);
 
 
