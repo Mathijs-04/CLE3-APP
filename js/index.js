@@ -1,11 +1,15 @@
+window.addEventListener('load', init);
 
+function init () {
 
-const opgeslagenRoutes = document.getElementById('nieuwe-route-button');
-opgeslagenRoutes.addEventListener('click', sendRouteplanner);
+    const opgeslagenRoutes = document.getElementById('nieuwe-route-button');
+    opgeslagenRoutes.addEventListener('click', sendRouteplanner);
 
+    const nieuweRoutes = document.getElementById('opgeslagen-route-button');
+    nieuweRoutes.addEventListener('click', sendFavorieteroutes);
 
-const nieuweRoutes = document.getElementById('opgeslagen-route-button');
-nieuweRoutes.addEventListener('click', sendFavorieteroutes);
+}
+
 
 
 function controlFunction() {
@@ -13,12 +17,12 @@ function controlFunction() {
 }
 function sendRouteplanner () {
     console.log('Clicked on nieuwe route');
-    window.location.replace('routeplanner.html');
+    window.location.href = 'routeplanner.html';
 }
 
 function sendFavorieteroutes () {
     console.log('Clicked on FAVORITES');
-    window.location.replace('favorieteroutes.html')
+    window.location.href = 'favorieteroutes.html';
 }
 
 

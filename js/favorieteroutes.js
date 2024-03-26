@@ -1,5 +1,12 @@
-const backButton = document.getElementById('back-button');
-backButton.addEventListener('click', sendBack);
+window.addEventListener('load', init);
+
+function init() {
+    const backButton = document.getElementById('back-button');
+    backButton.addEventListener('click', sendBack);
+}
+
+
+
 function sendBack (){
     console.log('clicked on back button');
     window.history.back();
