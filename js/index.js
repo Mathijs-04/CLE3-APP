@@ -7,6 +7,7 @@ opgeslagenRoutes.addEventListener('click', sendRouteplanner);
 const nieuweRoutes = document.getElementById('button2');
 nieuweRoutes.addEventListener('click', sendFavorieteroutes);
 
+
 function controlFunction() {
     console.log('clicked on button');
 }
@@ -19,3 +20,6 @@ function sendFavorieteroutes () {
     console.log('Clicked on FAVORITES');
     window.location.replace('favorieteroutes.html')
 }
+
+
+
