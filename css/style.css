@@ -1,11 +1,35 @@
+/* Basic rules */
+
 body {
+    margin: 0px;
     background-color: #EDE9E9;
 }
 
-nav {
+header {
+    display: flex;
+}
+
+.index-header {
+    flex-direction: row-reverse;
+}
+
+/* Blue */
+.blue {
     background-color: #98C1D9;
 }
 
-header {
-    background-color: #98C1D9;
+.index-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.index-main img {
+    width: 70vw;
+}
+
+/* Pink */
+
+/* Purple */
+
+/* Green */
