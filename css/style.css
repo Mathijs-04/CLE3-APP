@@ -1,4 +1,4 @@
-/* Basic rules */
+/* Basic rules all pages */
 
 body {
     margin: 0px;
@@ -9,7 +9,14 @@ header {
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
+}
 
+#back-button img {
+    width: 8vw;
+}
+
+#reis-rust img {
+    width: 24vw;
 }
 
 .index-header {
@@ -35,12 +42,44 @@ button {
     background-color: #EDE9E9;
 }
 
+/* Basic exc. index */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+input {
+    background-color: #EDE9E9;
+}
+
+#button-bottom {
+    display: flex;
+    float: right;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
 
 
 /* Blue */
+
+    /* index */
 .blue {
     background-color: #98C1D9;
     color: #1A2F47;
+}
+
+header {
+    background-color: #98C1D9;
 }
 
 .button-blue {
@@ -52,6 +91,18 @@ button {
 
 .index-main img {
     width: 70vw;
+}
+
+/* routeplanner */
+h1 {
+    color: #1A2F47;
+}
+
+input {
+    color: #1A2F47;
+    border: #1A2F47 solid 2px;
+    border-radius: 2rem;
+    padding: 0.5rem;
 }
 
 /* Pink */

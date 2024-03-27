@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js"></script>
     <script src="./js/routeplanner.js"></script>
     <title>routeplanner</title>
@@ -13,16 +13,18 @@
 <body>
 <header>
     <div id="back-button"><img src="./img/Arrow-Blue.png" alt="backbutton"></div>
+    <div id="reis-rust"><img src="./img/Logo-Blue.png" alt="reis-rust"></div>
 </header>
 <main>
     <h1>Waar wil je heen?</h1>
-    <form action="">
+    <form action="" id="form1">
         <label for="van"></label>
         <input type="text" name="van" id="van" value="Van:">
         <label for="naar"></label>
         <input type="text" name="naar" id="naar" value="Naar:">
-        <input type="submit" value="verder">
     </form>
+
+    <button class="button-blue" id="button-bottom" form="form1" type="submit" value="verder">Verder</button>
 </main>
 </body>
 </html>
