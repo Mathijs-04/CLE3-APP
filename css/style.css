@@ -6,22 +6,48 @@ body {
 }
 
 header {
+    padding: 0.5rem;
     display: flex;
+    justify-content: space-between;
+
 }
 
 .index-header {
     flex-direction: row-reverse;
 }
 
-/* Blue */
-.blue {
-    background-color: #98C1D9;
+.index-header img {
+    width: 8vw;
 }
 
 .index-main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5rem;
+}
+
+.index-main button {
+    width: 70vw;
+}
+
+button {
+    background-color: #EDE9E9;
+}
+
+
+
+/* Blue */
+.blue {
+    background-color: #98C1D9;
+    color: #1A2F47;
+}
+
+.button-blue {
+    color: #1A2F47;
+    border: #1A2F47 solid 2px;
+    border-radius: 2rem;
+    padding: 0.5rem;
 }
 
 .index-main img {
