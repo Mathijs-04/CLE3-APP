@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     init();
 });
 
-let reisdata = [];
+let favoriteRoutesData = [];
 let main;
 
 function init() {
     main = document.querySelector('main');
-    if(main) {
+    if (main) {
         getFromLocalStorage();
     } else {
         console.error('Main element not found');
@@ -16,20 +16,20 @@ function init() {
 
 function getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('reisdata'));
-    reisdata = data || [];
+    favoriteRoutesData = data || [];
     createDivs();
 }
 
 function createDivs() {
-    for (let i = 0; i < reisdata.length; i++) {
+    for (let i = 0; i < favoriteRoutesData.length; i++) {
         const div = document.createElement('div');
         main.appendChild(div);
-        fillDivs(div, reisdata[i]);
+        fillDivs(div, favoriteRoutesData[i]);
     }
 }
 
 function fillDivs(div, data) {
     const p = document.createElement('p');
     div.appendChild(p);
-    p.innerHTML = `Van: ${data.van}, Naar: ${data.naar}`;
+    p.innerHTML = `${data.van}, ${data.naar}`;
 }
