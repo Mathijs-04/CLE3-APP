@@ -1,4 +1,4 @@
-window.addEventListener('load', init);
+document.addEventListener('DOMContentLoaded', init);
 
 let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 
