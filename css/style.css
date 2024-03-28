@@ -142,6 +142,19 @@ h2 {
     color: #EDE9E9;
 }
 
+    /* favorieteroutes */
+.route {
+    padding: 0 0.5rem;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+.delete {
+    display: flex;
+    justify-content: end;
+    margin: 0;
+}
+
 /* Pink */
 
 /* Purple */
