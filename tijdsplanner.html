@@ -13,20 +13,32 @@
 <body>
 <header>
     <div id="back-button"><img src="./img/Arrow-Blue.png" alt="backbutton"></div>
+    <div id="reis-rust"><img src="./img/Logo-Blue.png" alt="reis-rust"></div>
 </header>
 <main>
-    <h1>Kies je datum</h1>
-    <form action="">
+
+    <form action="" id="form2">
+        <h1>Kies je datum</h1>
+
         <label for="datum"></label>
         <input type="date" name="datum" id="datum">
+
         <h2>Kies voor vertrek of aankomst</h2>
-        <div id="vertrek-button">Vertrek</div>
-        <div id="aankomst-button">Aankomst</div>
+
+        <div class="departure-arrival-toggle">
+            <input type="radio" id="vertrek-button" name="time-selection" checked>
+            <label for="vertrek-button">Vertrek</label>
+            <input type="radio" id="aankomst-button" name="time-selection">
+            <label for="aankomst-button">Aankomst</label>
+        </div>
+
         <h2>Kies je tijd</h2>
+
         <label for="tijd"></label>
         <input type="time" name="tijd" id="tijd">
-        <div id="submit-button">Plan je reis</div>
     </form>
+
+    <button class="button-blue" id="submit-button" form="form2" type="submit" value="verder">Plan je reis</button>
 </main>
 </body>
 </html>
