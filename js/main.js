@@ -19,8 +19,6 @@ function init() {
     }
 }
 
-
-
 function sendBack (){
     console.log('clicked on back button');
     window.history.back();
@@ -38,7 +36,6 @@ function dataGetter (event) {
     dataStorer(infoVanValue, infoNaarValue);
     window.location.href = 'favorieteroutes.html';
 }
-
 
 function dataStorer (infoVanValue, infoNaarValue) {
     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
