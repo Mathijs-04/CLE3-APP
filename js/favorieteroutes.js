@@ -1,15 +1,22 @@
-window.addEventListener('load', init);
+document.addEventListener('DOMContentLoaded', (event) => {
+    init();
+});
 
 let reisdata = [];
 let main;
 
 function init() {
     main = document.querySelector('main');
-    getFromLocalStorage();
+    if(main) {
+        getFromLocalStorage();
+    } else {
+        console.error('Main element not found');
+    }
 }
 
 function getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('reisdata'));
+    reisdata = data || [];
     createDivs();
 }
 
@@ -24,5 +31,5 @@ function createDivs() {
 function fillDivs(div, data) {
     const p = document.createElement('p');
     div.appendChild(p);
-    p.innerHTML = data;
+    p.innerHTML = `Van: ${data.van}, Naar: ${data.naar}`;
 }
