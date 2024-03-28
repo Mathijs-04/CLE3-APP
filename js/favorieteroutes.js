@@ -21,11 +21,3 @@ function fillDivs(div, data) {
     div.appendChild(p);
     p.innerHTML = data;
 }
-
-//Haal reisdata op uit local storage
-
-//Maak en Div aan voor elke reis
-
-//Vul de Div met de reisdata
-
-//Maak een delete button die de div en reisdata verwijderd
