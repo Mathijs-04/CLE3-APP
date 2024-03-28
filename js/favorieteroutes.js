@@ -5,6 +5,11 @@ let main;
 
 function init() {
     main = document.querySelector('main');
+    getFromLocalStorage();
+}
+
+function getFromLocalStorage() {
+
     createDivs();
 }
 
