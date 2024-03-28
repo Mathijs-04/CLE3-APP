@@ -93,7 +93,7 @@ header {
     width: 70vw;
 }
 
-/* routeplanner */
+    /* routeplanner */
 h1 {
     color: #1A2F47;
 }
@@ -103,6 +103,19 @@ input {
     border: #1A2F47 solid 2px;
     border-radius: 2rem;
     padding: 0.5rem;
+}
+
+    /* favorieteroutes */
+.route {
+    padding: 0 0.5rem;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+.delete {
+    display: flex;
+    justify-content: end;
+    margin: 0;
 }
 
 /* Pink */
