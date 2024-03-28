@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let reisdata = ['Test1', 'Test2'];
+let reisdata = [];
 let main;
 
 function init() {
@@ -9,7 +9,7 @@ function init() {
 }
 
 function getFromLocalStorage() {
-
+    const data = JSON.parse(localStorage.getItem('reisdata'));
     createDivs();
 }
 

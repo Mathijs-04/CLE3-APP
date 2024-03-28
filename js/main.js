@@ -18,7 +18,7 @@ function sendBack (){
 }
 
 function dataGetter (event) {
-    event.preventDefault();
+    event.preventDefault(event);
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
     console.log(infoVanValue);
@@ -27,6 +27,7 @@ function dataGetter (event) {
     console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
+    window.location.href = 'favorieteroutes.html';
 }
 
 
