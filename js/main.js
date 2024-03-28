@@ -37,10 +37,3 @@ function dataStorer (infoVanValue, infoNaarValue) {
 
     localStorage.setItem('reisdata', JSON.stringify(reisdata));
 }
-
-
-//Input value in forms,
-    //Store value in variable,
-        //Variable in  array.
-
-//Haal
