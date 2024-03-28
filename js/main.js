@@ -4,10 +4,19 @@ let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 
 function init() {
     const backButton = document.getElementById('back-button');
-    backButton.addEventListener('click', sendBack);
     const submitButton = document.getElementById('submit-button');
-    submitButton.addEventListener('click', dataGetter);
 
+    if(backButton) {
+        backButton.addEventListener('click', sendBack);
+    } else {
+        console.error('Back button not found');
+    }
+
+    if(submitButton) {
+        submitButton.addEventListener('click', dataGetter);
+    } else {
+        console.error('Submit button not found');
+    }
 }
 
 
