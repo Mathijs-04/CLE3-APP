@@ -1,5 +1,7 @@
 window.addEventListener('load', init);
 
+let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
+
 function init() {
     const backButton = document.getElementById('back-button');
     backButton.addEventListener('click', sendBack);
@@ -15,9 +17,25 @@ function sendBack (){
     window.history.back();
 }
 
-function dataGetter () {
-    const info = document.getElementsByTagName('input');
-    console.log(info);
+function dataGetter (event) {
+    event.preventDefault();
+    const infoVan = document.getElementById('van');
+    const infoVanValue = infoVan.value;
+    console.log(infoVanValue);
+    const infoNaar = document.getElementById('naar');
+    const infoNaarValue = infoNaar.value;
+    console.log(infoNaarValue);
+
+    dataStorer(infoVanValue, infoNaarValue);
+}
+
+
+function dataStorer (infoVanValue, infoNaarValue) {
+    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
+
+    reisdata.push(dataAdd);
+
+    localStorage.setItem('reisdata', JSON.stringify(reisdata));
 }
 
 
