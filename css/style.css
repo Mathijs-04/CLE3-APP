@@ -80,6 +80,7 @@ input {
 
 header {
     background-color: #98C1D9;
+    border: 2px solid #7AAACC;
 }
 
 .button-blue {
