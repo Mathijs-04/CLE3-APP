@@ -10,8 +10,6 @@ function init () {
 
 }
 
-
-
 function controlFunction() {
     console.log('clicked on button');
 }
