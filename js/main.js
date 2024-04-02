@@ -19,7 +19,6 @@ function init() {
                 localStorage.setItem('opslaan', 'true');
             } else {
                 localStorage.setItem('opslaan', 'false');
-                event.preventDefault();
             }
         });
     }
@@ -31,8 +30,8 @@ function sendBack() {
 
 function dataGetter() {
     const infoVan = document.getElementById('van');
-    const infoVanValue = infoVan.value;
     const infoNaar = document.getElementById('naar');
+    const infoVanValue = infoVan.value;
     const infoNaarValue = infoNaar.value;
 
     dataStorer(infoVanValue, infoNaarValue);
