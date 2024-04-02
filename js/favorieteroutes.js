@@ -28,7 +28,7 @@ function createDivs() {
     main.innerHTML = '';
     favoriteRoutesData.forEach(routeData => {
         const div = document.createElement('div');
-        div.classList.add('route');
+        div.classList.add('route-blue');
         main.appendChild(div);
         fillDivs(div, routeData);
     });
