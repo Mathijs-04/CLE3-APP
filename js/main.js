@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', init);
 
-let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
+let reisdata = JSON.parse(localStorage.getItem('reisdata')) || [];
 
 function init() {
     const backButton = document.getElementById('back-button');
@@ -16,6 +16,9 @@ function init() {
             if (opslaanCheckbox && opslaanCheckbox.checked) {
                 event.preventDefault();
                 dataGetter();
+                localStorage.setItem('opslaan', 'true');
+            } else {
+                localStorage.setItem('opslaan', 'false');
             }
         });
     }
@@ -32,13 +35,11 @@ function dataGetter() {
     const infoNaarValue = infoNaar.value;
 
     dataStorer(infoVanValue, infoNaarValue);
-    window.location.href = 'favorieteroutes.html';
 }
 
 function dataStorer(infoVanValue, infoNaarValue) {
     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
     reisdata.push(dataAdd);
-
     localStorage.setItem('reisdata', JSON.stringify(reisdata));
 }
