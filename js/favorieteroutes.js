@@ -52,3 +52,5 @@ function removeFromLocalStorage(event) {
     localStorage.setItem('reisdata', JSON.stringify(favoriteRoutesData));
     createDivs();
 }
+
+// test
