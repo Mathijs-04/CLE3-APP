@@ -12,8 +12,9 @@ function init() {
     }
 
     if (submitButton) {
-        submitButton.addEventListener('click', function () {
+        submitButton.addEventListener('click', function (event) {
             if (opslaanCheckbox && opslaanCheckbox.checked) {
+                event.preventDefault();
                 dataGetter();
             }
         });
@@ -24,8 +25,7 @@ function sendBack() {
     window.history.back();
 }
 
-function dataGetter(event) {
-    event.preventDefault(event);
+function dataGetter() {
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
     const infoNaar = document.getElementById('naar');
