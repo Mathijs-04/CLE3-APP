@@ -4,7 +4,7 @@ let reisdata = JSON.parse(localStorage.getItem('reisdata')) || [];
 
 function init() {
     const backButton = document.getElementById('back-button');
-    const submitButton = document.getElementById('submit-button');
+    const submitButton = document.getElementById('submit');
     const opslaanCheckbox = document.getElementById('opslaan');
 
     if (backButton) {
@@ -19,6 +19,7 @@ function init() {
                 localStorage.setItem('opslaan', 'true');
             } else {
                 localStorage.setItem('opslaan', 'false');
+                event.preventDefault();
             }
         });
     }
