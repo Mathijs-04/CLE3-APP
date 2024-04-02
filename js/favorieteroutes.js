@@ -52,5 +52,3 @@ function removeFromLocalStorage(event) {
     localStorage.setItem('reisdata', JSON.stringify(favoriteRoutesData));
     createDivs();
 }
-
-// IK SNAP NIETS VAN DE REMOVEFROMLOACLSTORAGE FUNCTIE, ANYMORE, HELP
