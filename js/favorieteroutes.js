@@ -1,35 +1,43 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    init();
-});
+document.addEventListener('DOMContentLoaded', init);
 
-let favoriteRoutesData = [];
-let main;
+let reisdata = JSON.parse(localStorage.getItem('reisdata')) || [];
 
 function init() {
-    main = document.querySelector('main');
-    if (main) {
-        getFromLocalStorage();
-    } else {
-        console.error('Main element not found');
+    const backButton = document.getElementById('back-button');
+    const submitButton = document.getElementById('submit-button');
+    const opslaanCheckbox = document.getElementById('opslaan');
+
+    if (backButton) {
+        backButton.addEventListener('click', sendBack);
+    }
+
+    if (submitButton) {
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            dataGetter(opslaanCheckbox && opslaanCheckbox.checked);
+        });
     }
 }
 
-function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('reisdata'));
-    favoriteRoutesData = data || [];
-    createDivs();
+function sendBack() {
+    window.history.back();
 }
 
-function createDivs() {
-    for (let i = 0; i < favoriteRoutesData.length; i++) {
-        const div = document.createElement('div');
-        main.appendChild(div);
-        fillDivs(div, favoriteRoutesData[i]);
+function dataGetter(saveData) {
+    const infoVan = document.getElementById('van');
+    const infoVanValue = infoVan.value;
+    const infoNaar = document.getElementById('naar');
+    const infoNaarValue = infoNaar.value;
+
+    dataStorer(infoVanValue, infoNaarValue, saveData);
+    window.location.href = 'favorieteroutes.html';
+}
+
+function dataStorer(infoVanValue, infoNaarValue, saveData) {
+    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
+
+    if (saveData) {
+        reisdata.push(dataAdd);
+        localStorage.setItem('reisdata', JSON.stringify(reisdata));
     }
-}
-
-function fillDivs(div, data) {
-    const p = document.createElement('p');
-    div.appendChild(p);
-    p.innerHTML = `${data.van}, ${data.naar}`;
 }
