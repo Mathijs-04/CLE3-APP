@@ -13,8 +13,10 @@ function init() {
 
     if (submitButton) {
         submitButton.addEventListener('click', function (event) {
-            event.preventDefault();
-            dataGetter(opslaanCheckbox && opslaanCheckbox.checked);
+            if (opslaanCheckbox && opslaanCheckbox.checked) {
+                event.preventDefault();
+                dataGetter();
+            }
         });
     }
 }
@@ -23,21 +25,18 @@ function sendBack() {
     window.history.back();
 }
 
-function dataGetter(saveData) {
+function dataGetter() {
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
     const infoNaar = document.getElementById('naar');
     const infoNaarValue = infoNaar.value;
 
-    dataStorer(infoVanValue, infoNaarValue, saveData);
-    window.location.href = 'favorieteroutes.html';
+    dataStorer(infoVanValue, infoNaarValue);
 }
 
-function dataStorer(infoVanValue, infoNaarValue, saveData) {
+function dataStorer(infoVanValue, infoNaarValue) {
     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
-    if (saveData) {
-        reisdata.push(dataAdd);
-        localStorage.setItem('reisdata', JSON.stringify(reisdata));
-    }
+    reisdata.push(dataAdd);
+    localStorage.setItem('reisdata', JSON.stringify(reisdata));
 }
