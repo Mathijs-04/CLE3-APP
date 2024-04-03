@@ -105,9 +105,21 @@ input {
 
 .delete {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end; /* Align to the end of the flex container (right) */
+    align-items: flex-start; /* Align to the start of the flex container (top) */
     margin: 0;
+    position: absolute; /* Position absolutely within the container */
+    top: 0.5; /* Position at the top of the container */
+    right: 0.8rem; /* Position at the right of the container */
+    padding: 0; /* Remove padding */
+
+
 }
+
+.route-blue img {
+    height: 1.5rem;
+}
+
 
 
 /* Route overzicht */
@@ -220,11 +232,17 @@ h2 {
     /* favorieteroutes */
 
 .route-blue {
-    padding: 0.5rem;
+    position: relative; /* Add this line to set position to relative */
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 50%;
     margin-top: 2rem;
     border-radius: 2rem;
-    border: 1px solid #1A2F47;
+    border: 0.25rem solid #1A2F47;
+    background-color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .route-blue p {

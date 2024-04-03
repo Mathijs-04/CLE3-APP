@@ -35,13 +35,13 @@ function createDivs() {
 }
 
 function fillDivs(div, data) {
-    const deleteButton = document.createElement('p');
+    const deleteButton = document.createElement('img');
     deleteButton.classList.add('delete');
-    deleteButton.innerText = 'X';
+    deleteButton.src = './img/Xbutton.png';
     div.appendChild(deleteButton);
 
     const fromTo = document.createElement('p');
-    fromTo.innerText = `${data.van} > ${data.naar}`;
+    fromTo.innerHTML = `${data.van}<br>${data.naar}`;
     div.appendChild(fromTo);
 }
 
