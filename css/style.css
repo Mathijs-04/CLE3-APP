@@ -190,7 +190,7 @@ input {
 }
 
     /* routeplanner */
-input {
+.input-blue {
     color: #1A2F47;
     border: #1A2F47 solid 2px;
     border-radius: 2rem;
