@@ -167,6 +167,11 @@ input {
     margin-top: 0.2rem;
 }
 
+#submit-button {
+    padding: 1rem;
+    background-color: #FFFFFF;
+}
+
 
     /* tijdsplanner */
 
