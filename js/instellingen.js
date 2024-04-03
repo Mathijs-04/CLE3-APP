@@ -35,10 +35,7 @@ function createDivs() {
 }
 
 function fillDivs(div, data) {
-    const deleteButton = document.createElement('p');
-    deleteButton.classList.add('delete');
-    deleteButton.innerText = 'X';
-    div.appendChild(deleteButton);
+
 
     const fromTo = document.createElement('p');
     fromTo.innerText = `${data.van} > ${data.naar}`;
