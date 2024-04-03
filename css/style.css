@@ -146,12 +146,17 @@ input {
 .opslaan {
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    margin-top: 3rem;
+    margin-left: 13rem;
+}
+
+#opslaan {
+    width: 1rem;
+    height: 1rem;
 }
 
 .opslaanText {
-    margin-left: -2rem;
+    margin-top: 0.2rem;
 }
 
 
