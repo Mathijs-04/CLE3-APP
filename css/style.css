@@ -77,6 +77,30 @@ input {
 }
 
 
+/* modal */
+
+.modal {
+    opacity: 0;
+    transition: all 0.7s ease;
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 16px 22px 0 rgba(0, 0, 0, 0.6);
+    padding: 50px;
+}
+
+.modal[open] {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 /* tijdsplanner */
 
 .departure-arrival-toggle {
@@ -121,10 +145,16 @@ input {
 }
 
 
-
 /* Route overzicht */
 
+/**/
+
+
 /* Blue */
+
+.blue-text {
+    color: #1A2F47;
+}
 
     /* index */
 .blue {
@@ -149,12 +179,7 @@ input {
     width: 70vw;
 }
 
-
     /* routeplanner */
-h1 {
-    color: #1A2F47;
-}
-
 input {
     color: #1A2F47;
     border: #1A2F47 solid 2px;
@@ -194,10 +219,6 @@ input {
     gap: 0.5rem;
 }
 
-h2 {
-    color: #1A2F47;
-}
-
 .departure-arrival-toggle label {
     border: 1px solid #1A2F47;
 }
@@ -207,27 +228,6 @@ h2 {
     color: #EDE9E9;
 }
 
-    /* modal */
-.modal {
-    opacity: 0;
-    transition: all 0.7s ease;
-    display: flex;
-    align-items: flex-start;
-    justify-content: right;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 16px 22px 0 rgba(0, 0, 0, 0.6);
-    padding: 50px;
-}
-
-.modal[open] {
-    opacity: 1;
-    transition-delay: 0s;
-}
-
-.modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
     /* favorieteroutes */
 
@@ -243,10 +243,6 @@ h2 {
     background-color: #FFFFFF;
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-.route-blue p {
-    color: #1A2F47;
 }
 
 /* Pink */
