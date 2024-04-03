@@ -143,8 +143,11 @@ input {
     width: 30vw;
 }
 
-#opslaan {
-    /*margin-left: 1rem;*/
+.opslaan {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 
