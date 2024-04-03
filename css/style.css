@@ -26,11 +26,11 @@ header {
     width: 24vw;
 }
 
-.index-header {
+#index-header {
     flex-direction: row-reverse;
 }
 
-.index-header img {
+#index-header img {
     width: 8vw;
 }
 
