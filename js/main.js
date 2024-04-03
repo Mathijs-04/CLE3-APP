@@ -62,7 +62,7 @@ function getFromLocalStorage() {
 }
 
 function setChosenColorFromLocalStorage() {
-    chosenColor = localStorage.getItem("gekozenKleur");
+    chosenColor = localStorage.getItem("chosenColorApp");
 
     if (chosenColor) {
         // Voeg de juiste class toe aan de elementen die een kleur nodig hebben
@@ -75,13 +75,23 @@ function kleurMaker() {
     selectHeader.className = '';
     selectHeader.classList.add(`header-${chosenColor}`)
 
-    let backbutton = document.querySelector('img[src="./img/Arrow-Blue.png"]');
+    let backbutton = document.querySelector('img[src="./img/arrow-blue.png"]');
 
     if (backbutton && chosenColor) {
         // Vervang "Blue" door de opgeslagen kleur
-        let newImage = backbutton.src.replace("Blue", chosenColor);
+        let newImage = backbutton.src.replace("blue", chosenColor);
 
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         backbutton.src = newImage;
+    }
+
+    let headerLogo = document.querySelector('img[src="./img/logo-blue.png"]');
+
+    if (headerLogo && chosenColor) {
+        // Vervang "Blue" door de opgeslagen kleur
+        let newLogo = headerLogo.src.replace("blue", chosenColor);
+
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        headerLogo.src = newLogo;
     }
 }

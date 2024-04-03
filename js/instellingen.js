@@ -8,6 +8,6 @@ function colorSelector(e) {
     chosenColor = e.target.value;
 
     // Sla de geselecteerde kleur op in de local storage
-    localStorage.setItem("gekozenKleur", chosenColor);
+    localStorage.setItem("chosenColorApp", chosenColor);
     kleurMaker()
 }

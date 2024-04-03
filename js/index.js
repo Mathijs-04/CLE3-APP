@@ -63,3 +63,7 @@ function detailsModalInfo() {
     detailsModal.showModal();
 }
 
+// Kleuren van de website body
+let selectBody = document.querySelector("body")
+selectBody.className = '';
+selectBody.classList.add(`${chosenColor}`)
