@@ -34,7 +34,7 @@ function dataGetter (event) {
     console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
-    window.location.href = 'favorieteroutes.html';
+    window.location.href = 'routeoverzicht.html';
 }
 
 function dataStorer (infoVanValue, infoNaarValue) {
