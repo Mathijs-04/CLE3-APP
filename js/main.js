@@ -71,6 +71,7 @@ function setChosenColorFromLocalStorage() {
 }
 
 function kleurMaker() {
+    console.log(chosenColor)
     let selectHeader = document.querySelector("header")
     selectHeader.className = '';
     selectHeader.classList.add(`header-${chosenColor}`)
@@ -84,23 +85,18 @@ function kleurMaker() {
     }
 
     let headerLogo = document.getElementById('reis-rust');
-    let headerLogoImage = headerlogo.querySelector("img")
+    let headerLogoImage = headerLogo.querySelector("img")
 
     if (headerLogoImage && chosenColor) {
-        // Vervang "Blue" door de opgeslagen kleur
-        let newLogo = headerLogoImage.src.replace("blue", chosenColor);
-
         // Pas de bron van de afbeelding aan met de nieuwe kleur
-        headerLogoImage.src = newLogo;
+        headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }  
     
-    let mainLogo = document.querySelector('img[src="/img/reisrust-blue.png"]');
+    let mainLogo = document.getElementById('reisrust-logo');
+    let mainLogoImage = mainLogo.querySelector("img")
 
-    if (mainLogo && chosenColor) {
-        // Vervang "Blue" door de opgeslagen kleur
-        let newMainLogo = mainLogo.src.replace("blue", chosenColor);
-
+    if (mainLogoImage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
-        mainLogo.src = newMainLogo;
+        mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
     }
 }
