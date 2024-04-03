@@ -1,8 +1,15 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@500&family=Roboto&family=Roboto+Condensed:wght@700&display=swap');
+
 /* Basic rules all pages */
 
 body {
     margin: 0px;
     background-color: #EDE9E9;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 header {
@@ -58,7 +65,7 @@ form {
 }
 
 input {
-    background-color: #EDE9E9;
+    background-color: #FFFFFF;
 }
 
 #submit-button {
@@ -122,9 +129,21 @@ input {
 
 .delete {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end; /* Align to the end of the flex container (right) */
+    align-items: flex-start; /* Align to the start of the flex container (top) */
     margin: 0;
+    position: absolute; /* Position absolutely within the container */
+    top: 0.5; /* Position at the top of the container */
+    right: 0.8rem; /* Position at the right of the container */
+    padding: 0; /* Remove padding */
+
+
 }
+
+.route-blue img {
+    height: 1.5rem;
+}
+
 
 /* Route overzicht */
 
@@ -148,10 +167,12 @@ input {
 }
 
 .button-blue {
+    background-color: #FFFFFF;
     color: #1A2F47;
     border: #1A2F47 solid 2px;
     border-radius: 2rem;
-    padding: 0.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
 .index-main img {
@@ -164,9 +185,33 @@ input {
     border: #1A2F47 solid 2px;
     border-radius: 2rem;
     padding: 0.5rem;
-    width: 30vw;
+    width: 50vw;
+    height: 5vh;
+    font-size: 1.5rem;
 }
 
+.opslaan {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    margin-left: 13rem;
+}
+
+#opslaan {
+    width: 1rem;
+    height: 1rem;
+}
+
+.opslaanText {
+    margin-top:-0.3rem;
+    font-size: 1.5rem;
+}
+
+#submit-button {
+    padding: 1rem;
+    background-color: #FFFFFF;
+    font-size: 1.5rem;
+}
 
     /* tijdsplanner */
 
@@ -187,11 +232,17 @@ input {
     /* favorieteroutes */
 
 .route-blue {
-    padding: 0.5rem;
+    position: relative; /* Add this line to set position to relative */
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 50%;
     margin-top: 2rem;
     border-radius: 2rem;
-    border: 1px solid #1A2F47;
+    border: 0.25rem solid #1A2F47;
+    background-color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 /* Pink */

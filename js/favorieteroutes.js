@@ -44,6 +44,7 @@ function fillDivs(div, data) {
     const fromTo = document.createElement('p');
     fromTo.innerText = `${data.van} > ${data.naar}`;
     fromTo.classList.add('blue-text')
+    fromTo.innerHTML = `${data.van}<br>${data.naar}`;
     div.appendChild(fromTo);
 }
 
