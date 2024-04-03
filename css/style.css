@@ -74,6 +74,8 @@ input {
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
 
@@ -133,7 +135,7 @@ input {
     align-items: flex-start; /* Align to the start of the flex container (top) */
     margin: 0;
     position: absolute; /* Position absolutely within the container */
-    top: 0.5; /* Position at the top of the container */
+    top: 0.5rem; /* Position at the top of the container */
     right: 0.8rem; /* Position at the right of the container */
     padding: 0; /* Remove padding */
 
@@ -167,9 +169,17 @@ input {
 }
 
 .button-blue {
-    background-color: #FFFFFF;
     color: #1A2F47;
-    border: #1A2F47 solid 2px;
+    border: #1A2F47 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.submit-button-blue {
+    background-color: #cfe1eb;
+    color: #1A2F47;
+    border: #1A2F47 solid 0.15rem;
     border-radius: 2rem;
     padding: 1rem;
     font-size: 1.5rem;
@@ -207,12 +217,6 @@ input {
     font-size: 1.5rem;
 }
 
-#submit-button {
-    padding: 1rem;
-    background-color: #FFFFFF;
-    font-size: 1.5rem;
-}
-
     /* tijdsplanner */
 
 #form2 {
@@ -240,7 +244,7 @@ input {
     margin-top: 2rem;
     border-radius: 2rem;
     border: 0.25rem solid #1A2F47;
-    background-color: #FFFFFF;
+    background-color: #cfe1eb;
     font-size: 1.5rem;
     font-weight: bold;
 }
