@@ -131,13 +131,13 @@ input {
 
 .delete {
     display: flex;
-    justify-content: flex-end; /* Align to the end of the flex container (right) */
-    align-items: flex-start; /* Align to the start of the flex container (top) */
+    justify-content: flex-end;
+    align-items: flex-start;
     margin: 0;
-    position: absolute; /* Position absolutely within the container */
-    top: 0.5rem; /* Position at the top of the container */
-    right: 0.8rem; /* Position at the right of the container */
-    padding: 0; /* Remove padding */
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    padding: 0;
 
 
 }
