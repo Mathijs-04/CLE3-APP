@@ -38,18 +38,9 @@ function dataGetter (event) {
     console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
-    window.location.href = 'routeoverzicht.html';
+    window.location.href = 'tijdsplanner.html';
 }
-//OLD DATASTORER FUNCTION
-// function dataStorer (infoVanValue, infoNaarValue) {
-//     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
-//
-//     reisdata.push(dataAdd);
-//
-//     localStorage.setItem('reisdata', JSON.stringify(reisdata));
-// }
 
-// NIEUWE DATASTORERFUNCTIE
 function dataStorer(infoVanValue, infoNaarValue) {
     // Retrieve existing routes data from local storage
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
