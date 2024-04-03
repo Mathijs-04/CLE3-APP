@@ -75,23 +75,32 @@ function kleurMaker() {
     selectHeader.className = '';
     selectHeader.classList.add(`header-${chosenColor}`)
 
-    let backbutton = document.querySelector('img[src="./img/arrow-blue.png"]');
+    let backbutton = document.getElementById('back-button');
+    let backbuttonimage = backbutton.querySelector("img")
 
-    if (backbutton && chosenColor) {
-        // Vervang "Blue" door de opgeslagen kleur
-        let newImage = backbutton.src.replace("blue", chosenColor);
-
+    if (backbuttonimage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
-        backbutton.src = newImage;
+        backbuttonimage.src = `./img/arrow-${chosenColor}.png`;
     }
 
-    let headerLogo = document.querySelector('img[src="./img/logo-blue.png"]');
+    let headerLogo = document.getElementById('reis-rust');
+    let headerLogoImage = headerlogo.querySelector("img")
 
-    if (headerLogo && chosenColor) {
+    if (headerLogoImage && chosenColor) {
         // Vervang "Blue" door de opgeslagen kleur
-        let newLogo = headerLogo.src.replace("blue", chosenColor);
+        let newLogo = headerLogoImage.src.replace("blue", chosenColor);
 
         // Pas de bron van de afbeelding aan met de nieuwe kleur
-        headerLogo.src = newLogo;
+        headerLogoImage.src = newLogo;
+    }  
+    
+    let mainLogo = document.querySelector('img[src="/img/reisrust-blue.png"]');
+
+    if (mainLogo && chosenColor) {
+        // Vervang "Blue" door de opgeslagen kleur
+        let newMainLogo = mainLogo.src.replace("blue", chosenColor);
+
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        mainLogo.src = newMainLogo;
     }
 }
