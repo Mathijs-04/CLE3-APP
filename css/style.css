@@ -64,10 +64,6 @@ form {
     gap: 2.5rem;
 }
 
-input {
-    background-color: #FFFFFF;
-}
-
 #submit-button {
     display: flex;
     float: right;
@@ -103,30 +99,6 @@ input {
 }
 
 
-/* tijdsplanner */
-
-.departure-arrival-toggle {
-    display: inline-block;
-}
-
-.departure-arrival-toggle input[type="radio"] {
-    display: none;
-}
-
-.departure-arrival-toggle label {
-    display: inline-block;
-    padding: 0.5rem;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 0rem 2rem 2rem 0rem;
-    width: 20vw;
-    text-align: center;
-}
-
-.departure-arrival-toggle label:first-of-type {
-    border-radius: 2rem 0rem 0rem 2rem;
-}
-
 /* Favoriete routes */
 
 .delete {
@@ -142,10 +114,10 @@ input {
 
 }
 
-.route-blue img {
-    height: 1.5rem;
+/* settings */
+.form-settings {
+    align-items: baseline;
 }
-
 
 /* Route overzicht */
 
@@ -191,8 +163,9 @@ input {
 
     /* routeplanner */
 .input-blue {
+    background-color: #cfe1eb;
     color: #1A2F47;
-    border: #1A2F47 solid 2px;
+    border: #1A2F47 solid 0.15rem;
     border-radius: 2rem;
     padding: 0.5rem;
     width: 50vw;
@@ -223,17 +196,42 @@ input {
     gap: 0.5rem;
 }
 
-.departure-arrival-toggle label {
-    border: 1px solid #1A2F47;
+
+/* tijdsplanner */
+
+.departure-arrival-toggle-blue {
+    display: inline-block;
 }
 
-.departure-arrival-toggle input[type="radio"]:checked + label {
+.departure-arrival-toggle-blue input[type="radio"] {
+    display: none;
+
     background-color: #4E6A8A;
     color: #EDE9E9;
 }
 
+.departure-arrival-toggle-blue label {
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0rem 2rem 2rem 0rem;
+    width: 20vw;
+    text-align: center;
+
+    border: 0.15rem solid #1A2F47;
+}
+
+.departure-arrival-toggle-blue label:first-of-type {
+    border-radius: 2rem 0rem 0rem 2rem;
+}
+
 
     /* favorieteroutes */
+
+.route-blue img {
+    height: 1.5rem;
+}
 
 .route-blue {
     position: relative; /* Add this line to set position to relative */
@@ -243,14 +241,208 @@ input {
     width: 50%;
     margin-top: 2rem;
     border-radius: 2rem;
-    border: 0.25rem solid #1A2F47;
+    border: 0.15rem solid #1A2F47;
     background-color: #cfe1eb;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
+
+
 /* Pink */
 
+
+.pink-text {
+    color: #501639;
+}
+
+    /* index */
+.pink {
+    background-color: #E6AACE;
+    color: #501639;
+}
+
+.header-pink {
+    background-color: #E6AACE;
+}
+
+.button-pink {
+    color: #501639;
+    border: #501639 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.submit-button-pink {
+    background-color: #efd2e8;
+    color: #501639;
+    border: #501639 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+    /* routeplanner */
+.input-pink {
+    background-color: #efd2e8;
+    color: #501639;
+    border: #501639 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    width: 50vw;
+    height: 5vh;
+    font-size: 1.5rem;
+}
+
+
+    /* tijdsplanner */
+
+.departure-arrival-toggle-pink {
+    display: inline-block;
+}
+
+.departure-arrival-toggle-pink input[type="radio"] {
+    display: none;
+
+    background-color: #D671AD;
+    color: #EDE9E9;
+}
+
+.departure-arrival-toggle-pink label {
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0rem 2rem 2rem 0rem;
+    width: 20vw;
+    text-align: center;
+
+    border: 0.15rem solid #501639;
+}
+
+.departure-arrival-toggle-pink label:first-of-type {
+    border-radius: 2rem 0rem 0rem 2rem;
+}
+
+
+    /* favorieteroutes */
+
+.route-pink img {
+    height: 1.5rem;
+}
+
+.route-pink {
+    position: relative; /* Add this line to set position to relative */
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    border: 0.15rem solid #501639;
+    background-color: #efd2e8;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
 /* Purple */
+
+
+.purple-text {
+    color: #1D1128;
+}
+
+    /* index */
+.purple {
+    background-color: #E5D3ED;
+    color: #1D1128;
+}
+
+.header-purple {
+    background-color: #E5D3ED;
+}
+
+.button-pink {
+    color: #1D1128;
+    border: #1D1128 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.submit-button-pink {
+    background-color: #eeddf5;
+    color: #1D1128;
+    border: #1D1128 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+    /* routeplanner */
+.input-pink {
+    background-color: #eeddf5;
+    color: #1D1128;
+    border: #1D1128 solid 0.15rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    width: 50vw;
+    height: 5vh;
+    font-size: 1.5rem;
+}
+
+
+    /* tijdsplanner */
+
+.departure-arrival-toggle-pink {
+    display: inline-block;
+}
+
+.departure-arrival-toggle-pink input[type="radio"] {
+    display: none;
+
+    background-color: #d3bcea;
+    color: #EDE9E9;
+}
+
+.departure-arrival-toggle-pink label {
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0rem 2rem 2rem 0rem;
+    width: 20vw;
+    text-align: center;
+
+    border: 0.15rem solid #1D1128;
+}
+
+.departure-arrival-toggle-pink label:first-of-type {
+    border-radius: 2rem 0rem 0rem 2rem;
+}
+
+
+    /* favorieteroutes */
+
+.route-pink img {
+    height: 1.5rem;
+}
+
+.route-pink {
+    position: relative; /* Add this line to set position to relative */
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    border: 0.15rem solid #1D1128;
+    background-color: #eeddf5;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 
 /* Green */
