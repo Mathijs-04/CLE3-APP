@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', init);
 let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 
 function init() {
+    getFromLocalStorage();
     const backButton = document.getElementById('back-button');
     const submitButton = document.getElementById('submit-button');
 
@@ -36,11 +37,32 @@ function dataGetter (event) {
     dataStorer(infoVanValue, infoNaarValue);
     window.location.href = 'favorieteroutes.html';
 }
+//OLD DATASTORER FUNCTION
+// function dataStorer (infoVanValue, infoNaarValue) {
+//     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
+//
+//     reisdata.push(dataAdd);
+//
+//     localStorage.setItem('reisdata', JSON.stringify(reisdata));
+// }
 
-function dataStorer (infoVanValue, infoNaarValue) {
-    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
+// NIEUWE DATASTORERFUNCTIE
+function dataStorer(infoVanValue, infoNaarValue) {
+    // Retrieve existing routes data from local storage
+    let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
 
-    reisdata.push(dataAdd);
+    // Create the new route object
+    const dataAdd = { van: infoVanValue, naar: infoNaarValue };
 
-    localStorage.setItem('reisdata', JSON.stringify(reisdata));
+    // Append the new route to the existing routes data
+    existingData.push(dataAdd);
+
+    // Store the updated routes data back to local storage
+    localStorage.setItem('reisdata', JSON.stringify(existingData));
+}
+
+
+function getFromLocalStorage() {
+    const data = JSON.parse(localStorage.getItem('reisdata'));
+    favoriteRoutesData = data || [];
 }
