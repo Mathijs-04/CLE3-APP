@@ -35,7 +35,7 @@ function dataGetter (event) {
     console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
-    window.location.href = 'routeoverzicht.html';
+    window.location.href = 'tijdsplanner.html';
 }
 //OLD DATASTORER FUNCTION
 // function dataStorer (infoVanValue, infoNaarValue) {
