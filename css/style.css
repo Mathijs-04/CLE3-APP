@@ -147,7 +147,8 @@ input {
     border: #1A2F47 solid 2px;
     border-radius: 2rem;
     padding: 0.5rem;
-    width: 30vw;
+    width: 50vw;
+    height: 5vh;
 }
 
 .opslaan {
