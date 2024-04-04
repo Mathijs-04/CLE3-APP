@@ -33,6 +33,21 @@ function init () {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
     }
+
+    let settingsLogo = document.getElementById('setting-modal');
+    let settingLogoImage = settingsLogo.querySelector("img")
+
+    if (settingLogoImage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        settingLogoImage.src = `./img/settings-${chosenColor}.png`;
+    }
+
+    let buttonColor = document.querySelectorAll('button');
+    console.log(buttonColor)
+    buttonColor.forEach(function (buttonColor) {
+    buttonColor.className = '';
+    buttonColor.classList.add(`button-${chosenColor}`)
+    });
 }
 
 function controlFunction() {
