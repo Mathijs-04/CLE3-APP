@@ -37,30 +37,24 @@ function dataGetter(event) {
     const infoNaarValue = infoNaar.value;
     console.log(infoNaarValue);
 
-    // Call dataStorer regardless of whether the checkbox is checked or not
     dataStorer(infoVanValue, infoNaarValue);
 
     window.location.href = 'tijdsplanner.html';
 }
 
 function dataStorer(infoVanValue, infoNaarValue) {
-    // Retrieve existing routes data from local storage
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
     let favoriteData = JSON.parse(localStorage.getItem('favoritedata')) || [];
 
-    // Create the new route object
     const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
-    // Append the new route to the existing routes data
     existingData.push(dataAdd);
 
-    // If the route is a favorite, add it to the favorite routes data
     const opslaanCheckbox = document.getElementById('opslaan');
     if (opslaanCheckbox && opslaanCheckbox.checked) {
         favoriteData.push(dataAdd);
     }
 
-    // Store the updated routes data back to local storage
     localStorage.setItem('reisdata', JSON.stringify(existingData));
     localStorage.setItem('favoritedata', JSON.stringify(favoriteData));
 }
