@@ -526,12 +526,12 @@ form {
     display: none;
 }
 
-.departure-arrival-toggle-blue input[type="radio"]:checked + label {
+.departure-arrival-toggle-green input[type="radio"]:checked + label {
     background-color: #629D5E;
     color: #EDE9E9;
 }
 
-.departure-arrival-toggle-blue input[type="radio"]:not(:checked) + label {
+.departure-arrival-toggle-green input[type="radio"]:not(:checked) + label {
     background-color: transparent;
     color: #152214;
 }
