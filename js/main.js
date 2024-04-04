@@ -96,18 +96,22 @@ function kleurMaker() {
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
 
-    let mainLogo = document.getElementById('reisrust-logo');
-    let mainLogoImage = mainLogo.querySelector("img")
+    let submitbutton = document.querySelector('button');
 
-    if (mainLogoImage && chosenColor) {
-        // Pas de bron van de afbeelding aan met de nieuwe kleur
-        mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
+    submitbutton.classList.add(`submit-button-${chosenColor}`)
+
+    let inputFields = document.querySelectorAll('input');
+
+    inputFields.forEach(function (inputField) {
+        inputField.classList.add(`input-${chosenColor}`);
+    });
+
+    let selectText = document.getElementsByClassName("blue-text")
+    console.log(selectText)
+
+    for (let i = 0; i < selectText.length; i++) {
+        //selectText[i].classList.remove("blue-text");
+        selectText[i].classList.add(`${chosenColor}-text`);
     }
 
-    let submitbutton = document.getElementById('submit-button');
-    console.log(submitbutton)
-    let submitButtonChange = submitbutton.querySelector("button")
-
-    submitButtonChange.className = '';
-    submitButtonChange.classList.add(`header-${chosenColor}`)
 }
