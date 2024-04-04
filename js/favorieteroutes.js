@@ -2,10 +2,12 @@ document.addEventListener('DOMContentLoaded', init);
 
 let favoriteRoutesData = [];
 let main;
+// let chosenColor = '';
 
 function init() {
     main = document.querySelector('main');
     if (main) {
+        setChosenColorFromLocalStorage();
         getFromLocalStorage();
         createDivs();
     } else {
@@ -18,11 +20,15 @@ function getFromLocalStorage() {
     favoriteRoutesData = data || [];
 }
 
+function setChosenColorFromLocalStorage() {
+    chosenColor = localStorage.getItem("chosenColorApp");
+}
+
 function createDivs() {
     main.innerHTML = '';
     favoriteRoutesData.forEach(routeData => {
         const div = document.createElement('div');
-        div.classList.add('route-blue');
+        div.classList.add(`route-${chosenColor}`);
         main.appendChild(div);
         fillDivs(div, routeData);
     });
@@ -32,7 +38,7 @@ function fillDivs(div, data) {
     const deleteButton = document.createElement('p');
     deleteButton.classList.add('delete');
     deleteButton.classList.add('blue-text');
-    deleteButton.innerHTML = '<img src="path/to/Xbutton.png" alt="X">';
+    deleteButton.innerHTML = '<img src="/img/Xbutton.png" alt="X">';
     deleteButton.addEventListener('click', removeFromLocalStorage);
     div.appendChild(deleteButton);
 
