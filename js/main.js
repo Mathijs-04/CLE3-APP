@@ -8,13 +8,13 @@ function init() {
     const backButton = document.getElementById('back-button');
     const submitButton = document.getElementById('submit-button');
 
-    if(backButton) {
+    if (backButton) {
         backButton.addEventListener('click', sendBack);
     } else {
         console.error('Back button not found');
     }
 
-    if(submitButton) {
+    if (submitButton) {
         submitButton.addEventListener('click', dataGetter);
     } else {
         console.error('Submit button not found');
@@ -23,12 +23,12 @@ function init() {
     setChosenColorFromLocalStorage();
 }
 
-function sendBack (){
+function sendBack() {
     console.log('clicked on back button');
     window.history.back();
 }
 
-function dataGetter (event) {
+function dataGetter(event) {
     event.preventDefault(event);
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
@@ -36,8 +36,11 @@ function dataGetter (event) {
     const infoNaar = document.getElementById('naar');
     const infoNaarValue = infoNaar.value;
     console.log(infoNaarValue);
+    const opslaanCheckbox = document.getElementById('opslaan');
+    if (opslaanCheckbox && opslaanCheckbox.checked) {
+        dataStorer(infoVanValue, infoNaarValue);
+    }
 
-    dataStorer(infoVanValue, infoNaarValue);
     window.location.href = 'tijdsplanner.html';
 }
 
@@ -46,7 +49,7 @@ function dataStorer(infoVanValue, infoNaarValue) {
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
 
     // Create the new route object
-    const dataAdd = { van: infoVanValue, naar: infoNaarValue };
+    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
     // Append the new route to the existing routes data
     existingData.push(dataAdd);
@@ -91,7 +94,7 @@ function kleurMaker() {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
-    
+
     let mainLogo = document.getElementById('reisrust-logo');
     let mainLogoImage = mainLogo.querySelector("img")
 
