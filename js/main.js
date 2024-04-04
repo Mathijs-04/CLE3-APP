@@ -90,7 +90,7 @@ function kleurMaker() {
     if (headerLogoImage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
-    }  
+    }
     
     let mainLogo = document.getElementById('reisrust-logo');
     let mainLogoImage = mainLogo.querySelector("img")
@@ -99,4 +99,11 @@ function kleurMaker() {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
     }
+
+    let submitbutton = document.getElementById('submit-button');
+    console.log(submitbutton)
+    let submitButtonChange = submitbutton.querySelector("button")
+
+    submitButtonChange.className = '';
+    submitButtonChange.classList.add(`header-${chosenColor}`)
 }
