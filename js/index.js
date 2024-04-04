@@ -27,11 +27,23 @@ function init () {
     selectBody.classList.add(`${chosenColor}`)
 
     let mainLogo = document.getElementById('reisrust-logo');
+    console.log(mainLogo)
     let mainLogoImage = mainLogo.querySelector("img")
+    console.log(mainLogoImage)
 
     if (mainLogoImage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
+    }
+
+    let settingsLogo = document.getElementById('setting-modal');
+    console.log(settingsLogo)
+    let settingLogoImage = settingsLogo.querySelector("img")
+    console.log(settingLogoImage)
+
+    if (settingLogoImage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        settingLogoImage.src = `./img/settings-${chosenColor}.png`;
     }
 }
 
