@@ -16,12 +16,11 @@ function init() {
 }
 
 function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('reisdata'));
+    const data = JSON.parse(localStorage.getItem('favoritedata')); // Fetch data from 'favoritedata'
     favoriteRoutesData = data || [];
     createDivs();
     const deleteButtons = document.querySelectorAll('.delete');
     deleteButtons.forEach(button => button.addEventListener('click', removeFromLocalStorage));
-
 }
 
 function createDivs() {
