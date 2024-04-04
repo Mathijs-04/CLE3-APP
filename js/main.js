@@ -96,6 +96,21 @@ function kleurMaker() {
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
 
+    let selectText = document.getElementsByClassName("blue-text")
+    console.log(selectText)
+
+    Array.from(selectText).forEach(function(element) {
+        element.classList.add(`${chosenColor}-text`);
+        element.classList.remove("blue-text");
+    });
+
+    // for (let i = 0; i < selectText.length; i++) {
+    //     selectText[i].classList.add(`${chosenColor}-text`);
+    //     selectText[i].classList.remove("blue-text");
+    //     console.log(i)
+    // }
+
+
     let submitbutton = document.querySelector('button');
 
     submitbutton.classList.add(`submit-button-${chosenColor}`)
@@ -106,12 +121,5 @@ function kleurMaker() {
         inputField.classList.add(`input-${chosenColor}`);
     });
 
-    let selectText = document.getElementsByClassName("blue-text")
-    console.log(selectText)
-
-    for (let i = 0; i < selectText.length; i++) {
-        //selectText[i].classList.remove("blue-text");
-        selectText[i].classList.add(`${chosenColor}-text`);
-    }
 
 }
