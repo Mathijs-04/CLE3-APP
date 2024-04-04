@@ -1,9 +1,10 @@
-window.addEventListener("load",init)
+window.addEventListener("load", init)
 
-function init(){
+function init() {
     let colorForm = document.getElementById("form");
     colorForm.addEventListener("input", colorSelector)
 }
+
 function colorSelector(e) {
     chosenColor = e.target.value;
 
