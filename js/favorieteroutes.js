@@ -8,8 +8,8 @@ let main;
 function init() {
     main = document.querySelector('main');
     if (main) {
-        getFromLocalStorage()
-
+        getFromLocalStorage();
+        kleurMaker();
     } else {
         console.error('Main element not found');
     }
