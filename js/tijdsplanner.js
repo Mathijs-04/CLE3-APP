@@ -10,4 +10,12 @@ function init() {
     } else {
         console.error('Submit button not found');
     }
+
+    let selectToggle = document.getElementsByClassName("departure-arrival-toggle-blue")
+    console.log(selectToggle)
+
+    Array.from(selectToggle).forEach(function(element) {
+        element.classList.add(`departure-arrival-toggle-${chosenColor}`);
+        element.classList.remove("departure-arrival-toggle-blue");
+    });
 }
