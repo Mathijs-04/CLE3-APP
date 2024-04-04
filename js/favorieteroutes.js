@@ -8,20 +8,19 @@ let main;
 function init() {
     main = document.querySelector('main');
     if (main) {
-        getFromLocalStorage()
-
+        getFromLocalStorage();
+        kleurMaker();
     } else {
         console.error('Main element not found');
     }
 }
 
 function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('reisdata'));
+    const data = JSON.parse(localStorage.getItem('favoritedata'));
     favoriteRoutesData = data || [];
     createDivs();
     const deleteButtons = document.querySelectorAll('.delete');
     deleteButtons.forEach(button => button.addEventListener('click', removeFromLocalStorage));
-
 }
 
 function createDivs() {
