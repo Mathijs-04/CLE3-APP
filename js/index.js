@@ -5,9 +5,10 @@ let settings;
 let detailsModal;
 let detailsModalContent;
 let detailsModalCloseButton;
+
 // let chosenColor;
 
-function init () {
+function init() {
 
     // Event listeners toevoegen
     const opgeslagenRoutesButton = document.getElementById('nieuwe-route-button');
@@ -45,25 +46,26 @@ function init () {
     let buttonColor = document.querySelectorAll('button');
     console.log(buttonColor)
     buttonColor.forEach(function (buttonColor) {
-    buttonColor.className = '';
-    buttonColor.classList.add(`button-${chosenColor}`)
+        buttonColor.className = '';
+        buttonColor.classList.add(`button-${chosenColor}`)
     });
 }
 
 function controlFunction() {
     console.log('clicked on button');
 }
-function sendRouteplanner () {
+
+function sendRouteplanner() {
     console.log('Clicked on nieuwe route');
     window.location.href = 'routeplanner.html';
 }
 
-function sendFavorieteroutes () {
+function sendFavorieteroutes() {
     console.log('Clicked on FAVORITES');
     window.location.href = 'favorieteroutes.html';
 }
 
-function sendSettings(){
+function sendSettings() {
     window.location.href = 'instellingen.html';
 }
 
