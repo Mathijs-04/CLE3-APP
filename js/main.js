@@ -42,6 +42,22 @@ function dataGetter(event) {
     window.location.href = 'tijdsplanner.html';
 }
 
+function timeGetter() {
+    const datum = document.getElementById('datum');
+    const tijd = document.getElementById('tijd');
+
+    if (datum && tijd) {
+        const datumValue = datum.value;
+        const tijdValue = tijd.value;
+
+        const timeData = {datum: datumValue, tijd: tijdValue};
+
+        localStorage.setItem('timeData', JSON.stringify(timeData));
+    } else {
+        console.error('Date or time input not found');
+    }
+}
+
 function dataStorer(infoVanValue, infoNaarValue) {
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
     let favoriteData = JSON.parse(localStorage.getItem('favoritedata')) || [];
@@ -99,7 +115,7 @@ function kleurMaker() {
     let selectText = document.getElementsByClassName("blue-text")
     console.log(selectText)
 
-    Array.from(selectText).forEach(function(element) {
+    Array.from(selectText).forEach(function (element) {
         element.classList.add(`${chosenColor}-text`);
         element.classList.remove("blue-text");
     });
