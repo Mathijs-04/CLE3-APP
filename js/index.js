@@ -5,6 +5,7 @@ let settings;
 let detailsModal;
 let detailsModalContent;
 let detailsModalCloseButton;
+// let chosenColor;
 
 function init () {
 
@@ -15,14 +16,15 @@ function init () {
     const nieuweRoutesButton = document.getElementById('opgeslagen-route-button');
     nieuweRoutesButton.addEventListener('click', sendFavorieteroutes);
 
-
-    detailsModal = document.getElementById('modal-content');
-    detailsModalContent = detailsModal.querySelector('.modal-content');
-
-    detailsModal.addEventListener('click', detailsModalClickHandler);
-
     settings = document.getElementById('setting-modal');
     settings.addEventListener('click', detailsModalInfo);
+
+    chosenColor = localStorage.getItem("chosenColorApp");
+
+// Kleuren van de website body
+    let selectBody = document.querySelector("body")
+    selectBody.className = '';
+    selectBody.classList.add(`${chosenColor}`)
 }
 
 function controlFunction() {
@@ -62,8 +64,3 @@ function detailsModalInfo() {
 
     detailsModal.showModal();
 }
-
-// Kleuren van de website body
-let selectBody = document.querySelector("body")
-selectBody.className = '';
-selectBody.classList.add(`${chosenColor}`)
