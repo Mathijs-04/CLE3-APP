@@ -40,7 +40,6 @@ function dataGetter(event) {
     if (opslaanCheckbox && opslaanCheckbox.checked) {
         dataStorer(infoVanValue, infoNaarValue);
     }
-
     window.location.href = 'tijdsplanner.html';
 }
 
