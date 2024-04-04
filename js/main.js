@@ -10,10 +10,14 @@ function init() {
 
     if (backButton) {
         backButton.addEventListener('click', sendBack);
+    } else {
+        console.error('Back button not found');
     }
 
     if (submitButton) {
         submitButton.addEventListener('click', dataGetter);
+    } else {
+        console.error('Submit button not found');
     }
 
     setChosenColorFromLocalStorage();
@@ -28,24 +32,21 @@ function dataGetter(event) {
     event.preventDefault(event);
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
+    console.log(infoVanValue);
     const infoNaar = document.getElementById('naar');
     const infoNaarValue = infoNaar.value;
+    console.log(infoNaarValue);
 
-    const datum = document.getElementById('datum');
-    const datumValue = datum.value;
-    const tijd = document.getElementById('tijd');
-    const tijdValue = tijd.value;
-
-    dataStorer(infoVanValue, infoNaarValue, datumValue, tijdValue);
+    dataStorer(infoVanValue, infoNaarValue);
 
     window.location.href = 'tijdsplanner.html';
 }
 
-function dataStorer(infoVanValue, infoNaarValue, datumValue, tijdValue) {
+function dataStorer(infoVanValue, infoNaarValue) {
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
     let favoriteData = JSON.parse(localStorage.getItem('favoritedata')) || [];
 
-    const dataAdd = {van: infoVanValue, naar: infoNaarValue, datum: datumValue, tijd: tijdValue};
+    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
     existingData.push(dataAdd);
 
@@ -58,6 +59,7 @@ function dataStorer(infoVanValue, infoNaarValue, datumValue, tijdValue) {
     localStorage.setItem('favoritedata', JSON.stringify(favoriteData));
 }
 
+
 function getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('reisdata'));
     favoriteRoutesData = data || [];
@@ -67,11 +69,13 @@ function setChosenColorFromLocalStorage() {
     chosenColor = localStorage.getItem("chosenColorApp");
 
     if (chosenColor) {
+        // Voeg de juiste class toe aan de elementen die een kleur nodig hebben
         kleurMaker()
     }
 }
 
 function kleurMaker() {
+    console.log(chosenColor)
     let selectHeader = document.querySelector("header")
     selectHeader.className = '';
     selectHeader.classList.add(`header-${chosenColor}`)
@@ -80,6 +84,7 @@ function kleurMaker() {
     let backbuttonimage = backbutton.querySelector("img")
 
     if (backbuttonimage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
         backbuttonimage.src = `./img/arrow-${chosenColor}.png`;
     }
 
@@ -87,8 +92,24 @@ function kleurMaker() {
     let headerLogoImage = headerLogo.querySelector("img")
 
     if (headerLogoImage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
+
+    let selectText = document.getElementsByClassName("blue-text")
+    console.log(selectText)
+
+    Array.from(selectText).forEach(function(element) {
+        element.classList.add(`${chosenColor}-text`);
+        element.classList.remove("blue-text");
+    });
+
+    // for (let i = 0; i < selectText.length; i++) {
+    //     selectText[i].classList.add(`${chosenColor}-text`);
+    //     selectText[i].classList.remove("blue-text");
+    //     console.log(i)
+    // }
+
 
     let submitbutton = document.querySelector('button');
 
@@ -100,9 +121,5 @@ function kleurMaker() {
         inputField.classList.add(`input-${chosenColor}`);
     });
 
-    let selectText = document.getElementsByClassName("blue-text")
 
-    for (let i = 0; i < selectText.length; i++) {
-        selectText[i].classList.add(`${chosenColor}-text`);
-    }
 }
