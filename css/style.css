@@ -321,7 +321,7 @@ form {
     color: #EDE9E9;
 }
 
-.departure-arrival-toggle-blue input[type="radio"]:not(:checked) + label {
+.departure-arrival-toggle-pink input[type="radio"]:not(:checked) + label {
     background-color: transparent;
     color: #501639;
 }
