@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    init();
-});
+document.addEventListener('DOMContentLoaded', init);
 
 let favoriteRoutesData = [];
 let main;
@@ -9,18 +7,15 @@ function init() {
     main = document.querySelector('main');
     if (main) {
         getFromLocalStorage();
-        kleurMaker();
+        createDivs();
     } else {
         console.error('Main element not found');
     }
 }
 
 function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('favoritedata'));
+    const data = JSON.parse(localStorage.getItem('reisdata'));
     favoriteRoutesData = data || [];
-    createDivs();
-    const deleteButtons = document.querySelectorAll('.delete');
-    deleteButtons.forEach(button => button.addEventListener('click', removeFromLocalStorage));
 }
 
 function createDivs() {
@@ -36,20 +31,19 @@ function createDivs() {
 function fillDivs(div, data) {
     const deleteButton = document.createElement('p');
     deleteButton.classList.add('delete');
-    deleteButton.classList.add('blue-text')
-    deleteButton.innerText = 'X';
+    deleteButton.classList.add('blue-text');
+    deleteButton.innerHTML = '<img src="path/to/Xbutton.png" alt="X">';
+    deleteButton.addEventListener('click', removeFromLocalStorage);
     div.appendChild(deleteButton);
 
     const fromTo = document.createElement('p');
-    fromTo.innerText = `${data.van} > ${data.naar}`;
-    fromTo.classList.add('blue-text')
-    fromTo.innerHTML = `${data.van}<br>${data.naar}`;
+    fromTo.innerHTML = `${data.van} > ${data.naar}`;
+    fromTo.classList.add('blue-text');
     div.appendChild(fromTo);
 }
 
 function removeFromLocalStorage(event) {
-    console.log('testCLICKed');
-   const index = Array.from(this.parentNode.parentNode.children).indexOf(this.parentNode);
+    const index = Array.from(this.parentNode.parentNode.children).indexOf(this.parentNode);
     favoriteRoutesData.splice(index, 1);
     localStorage.setItem('reisdata', JSON.stringify(favoriteRoutesData));
     createDivs();
