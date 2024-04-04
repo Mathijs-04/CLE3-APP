@@ -25,6 +25,14 @@ function init () {
     let selectBody = document.querySelector("body")
     selectBody.className = '';
     selectBody.classList.add(`${chosenColor}`)
+
+    let mainLogo = document.getElementById('reisrust-logo');
+    let mainLogoImage = mainLogo.querySelector("img")
+
+    if (mainLogoImage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
+    }
 }
 
 function controlFunction() {
