@@ -16,7 +16,7 @@ function init() {
 }
 
 function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('favoritedata')); // Fetch data from 'favoritedata'
+    const data = JSON.parse(localStorage.getItem('favoritedata'));
     favoriteRoutesData = data || [];
     createDivs();
     const deleteButtons = document.querySelectorAll('.delete');
