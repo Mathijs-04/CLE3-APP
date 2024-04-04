@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+    chosenColor = localStorage.getItem("chosenColorApp");
+
     const submitButton = document.getElementById('submit-button');
 
     if (submitButton) {
@@ -14,9 +16,9 @@ function init() {
     }
 
     let selectToggle = document.getElementsByClassName("departure-arrival-toggle-blue")
-    console.log(selectToggle)
 
     Array.from(selectToggle).forEach(function(element) {
+    console.log(chosenColor);
         element.classList.remove("departure-arrival-toggle-blue");
         element.classList.add(`departure-arrival-toggle-${chosenColor}`);
     });

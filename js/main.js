@@ -123,9 +123,10 @@ function kleurMaker() {
         submitbutton.classList.add(`submit-button-${chosenColor}`);
     }
 
-    let inputFields = document.querySelectorAll('input');
-
-    inputFields.forEach(function (inputField) {
+    let inputFields = document.getElementsByClassName("input-blue")
+    console.log(inputFields)
+    Array.from(inputFields).forEach(function (inputField) {
+        inputField.classList.remove("input-blue");
         inputField.classList.add(`input-${chosenColor}`);
     });
 }
