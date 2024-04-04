@@ -199,15 +199,26 @@ form {
 
 /* tijdsplanner */
 
+.input-toggle {
+    background-color: transparent;
+}
+
 .departure-arrival-toggle-blue {
     display: inline-block;
 }
 
 .departure-arrival-toggle-blue input[type="radio"] {
     display: none;
+}
 
-    background-color: #4E6A8A;
+.departure-arrival-toggle-blue input[type="radio"]:checked + label {
+    background-color: #1A2F47;
     color: #EDE9E9;
+}
+
+.departure-arrival-toggle-blue input[type="radio"]:not(:checked) + label {
+    background-color: transparent;
+    color: #1A2F47;
 }
 
 .departure-arrival-toggle-blue label {
@@ -218,14 +229,13 @@ form {
     border-radius: 0rem 2rem 2rem 0rem;
     width: 20vw;
     text-align: center;
-
+    transition: background-color 0.3s ease;
     border: 0.15rem solid #1A2F47;
 }
 
 .departure-arrival-toggle-blue label:first-of-type {
     border-radius: 2rem 0rem 0rem 2rem;
 }
-
 
     /* favorieteroutes */
 
@@ -304,9 +314,16 @@ form {
 
 .departure-arrival-toggle-pink input[type="radio"] {
     display: none;
+}
 
+.departure-arrival-toggle-pink input[type="radio"]:checked + label {
     background-color: #D671AD;
     color: #EDE9E9;
+}
+
+.departure-arrival-toggle-pink input[type="radio"]:not(:checked) + label {
+    background-color: transparent;
+    color: #501639;
 }
 
 .departure-arrival-toggle-pink label {
@@ -317,7 +334,7 @@ form {
     border-radius: 0rem 2rem 2rem 0rem;
     width: 20vw;
     text-align: center;
-
+    transition: background-color 0.3s ease;
     border: 0.15rem solid #501639;
 }
 
@@ -402,9 +419,16 @@ form {
 
 .departure-arrival-toggle-purple input[type="radio"] {
     display: none;
+}
 
+.departure-arrival-toggle-purple input[type="radio"]:checked + label {
     background-color: #d3bcea;
     color: #EDE9E9;
+}
+
+.departure-arrival-toggle-purple input[type="radio"]:not(:checked) + label {
+    background-color: transparent;
+    color: #1D1128;
 }
 
 .departure-arrival-toggle-purple label {
@@ -415,7 +439,7 @@ form {
     border-radius: 0rem 2rem 2rem 0rem;
     width: 20vw;
     text-align: center;
-
+    transition: background-color 0.3s ease;
     border: 0.15rem solid #1D1128;
 }
 
@@ -500,9 +524,16 @@ form {
 
 .departure-arrival-toggle-green input[type="radio"] {
     display: none;
+}
 
+.departure-arrival-toggle-green input[type="radio"]:checked + label {
     background-color: #629D5E;
     color: #EDE9E9;
+}
+
+.departure-arrival-toggle-green input[type="radio"]:not(:checked) + label {
+    background-color: transparent;
+    color: #152214;
 }
 
 .departure-arrival-toggle-green label {
@@ -513,7 +544,7 @@ form {
     border-radius: 0rem 2rem 2rem 0rem;
     width: 20vw;
     text-align: center;
-
+    transition: background-color 0.3s ease;
     border: 0.15rem solid #152214;
 }
 
