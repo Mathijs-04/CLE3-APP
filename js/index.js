@@ -27,9 +27,7 @@ function init () {
     selectBody.classList.add(`${chosenColor}`)
 
     let mainLogo = document.getElementById('reisrust-logo');
-    console.log(mainLogo)
     let mainLogoImage = mainLogo.querySelector("img")
-    console.log(mainLogoImage)
 
     if (mainLogoImage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
@@ -37,14 +35,19 @@ function init () {
     }
 
     let settingsLogo = document.getElementById('setting-modal');
-    console.log(settingsLogo)
     let settingLogoImage = settingsLogo.querySelector("img")
-    console.log(settingLogoImage)
 
     if (settingLogoImage && chosenColor) {
         // Pas de bron van de afbeelding aan met de nieuwe kleur
         settingLogoImage.src = `./img/settings-${chosenColor}.png`;
     }
+
+    let buttonColor = document.querySelectorAll('button');
+    console.log(buttonColor)
+    buttonColor.forEach(function (buttonColor) {
+    buttonColor.className = '';
+    buttonColor.classList.add(`button-${chosenColor}`)
+    });
 }
 
 function controlFunction() {

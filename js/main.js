@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', init);
-
+window.addEventListener('load', init);
 let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 let chosenColor;
 
@@ -75,7 +74,6 @@ function dataStorer(infoVanValue, infoNaarValue) {
     localStorage.setItem('favoritedata', JSON.stringify(favoriteData));
 }
 
-
 function getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('reisdata'));
     favoriteRoutesData = data || [];
@@ -85,22 +83,23 @@ function setChosenColorFromLocalStorage() {
     chosenColor = localStorage.getItem("chosenColorApp");
 
     if (chosenColor) {
-        // Voeg de juiste class toe aan de elementen die een kleur nodig hebben
-        kleurMaker()
+        kleurMaker();
     }
 }
 
 function kleurMaker() {
-    console.log(chosenColor)
-    let selectHeader = document.querySelector("header")
+    let selectHeader = document.querySelector("header");
+    if (!selectHeader) {
+        console.error('Header element not found');
+        return;
+    }
     selectHeader.className = '';
-    selectHeader.classList.add(`header-${chosenColor}`)
+    selectHeader.classList.add(`header-${chosenColor}`);
 
     let backbutton = document.getElementById('back-button');
     let backbuttonimage = backbutton.querySelector("img")
 
     if (backbuttonimage && chosenColor) {
-        // Pas de bron van de afbeelding aan met de nieuwe kleur
         backbuttonimage.src = `./img/arrow-${chosenColor}.png`;
     }
 
@@ -108,34 +107,25 @@ function kleurMaker() {
     let headerLogoImage = headerLogo.querySelector("img")
 
     if (headerLogoImage && chosenColor) {
-        // Pas de bron van de afbeelding aan met de nieuwe kleur
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
 
     let selectText = document.getElementsByClassName("blue-text")
-    console.log(selectText)
 
     Array.from(selectText).forEach(function (element) {
         element.classList.add(`${chosenColor}-text`);
         element.classList.remove("blue-text");
     });
 
-    // for (let i = 0; i < selectText.length; i++) {
-    //     selectText[i].classList.add(`${chosenColor}-text`);
-    //     selectText[i].classList.remove("blue-text");
-    //     console.log(i)
-    // }
+    let submitbutton = document.getElementById('submit-button');
 
-
-    let submitbutton = document.querySelector('button');
-
-    submitbutton.classList.add(`submit-button-${chosenColor}`)
+    if (submitbutton) {
+        submitbutton.classList.add(`submit-button-${chosenColor}`);
+    }
 
     let inputFields = document.querySelectorAll('input');
 
     inputFields.forEach(function (inputField) {
         inputField.classList.add(`input-${chosenColor}`);
     });
-
-
 }

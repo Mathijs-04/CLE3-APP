@@ -75,30 +75,6 @@ form {
 }
 
 
-/* modal */
-
-.modal {
-    opacity: 0;
-    transition: all 0.7s ease;
-    display: flex;
-    align-items: flex-start;
-    justify-content: right;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 16px 22px 0 rgba(0, 0, 0, 0.6);
-    padding: 50px;
-}
-
-.modal[open] {
-    opacity: 1;
-    transition-delay: 0s;
-}
-
-.modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-
 /* Favoriete routes */
 
 .delete {
@@ -317,7 +293,7 @@ form {
 }
 
 .departure-arrival-toggle-pink input[type="radio"]:checked + label {
-    background-color: #D671AD;
+    background-color: #501639;
     color: #EDE9E9;
 }
 
@@ -422,7 +398,7 @@ form {
 }
 
 .departure-arrival-toggle-purple input[type="radio"]:checked + label {
-    background-color: #d3bcea;
+    background-color: #1D1128;
     color: #EDE9E9;
 }
 
@@ -487,7 +463,7 @@ form {
 }
 
 .button-green {
-    color: #dafad9;
+    color: #152214;
     border: #152214 solid 0.15rem;
     border-radius: 2rem;
     padding: 1rem;
@@ -495,7 +471,7 @@ form {
 }
 
 .submit-button-green {
-    background-color: #dafad9;
+    background-color: #dbeadb;
     color: #152214;
     border: #152214 solid 0.15rem;
     border-radius: 2rem;
@@ -505,7 +481,7 @@ form {
 
 /* routeplanner */
 .input-green {
-    background-color: #dafad9;
+    background-color: #dbeadb;
     color: #152214;
     border: #152214 solid 0.15rem;
     border-radius: 2rem;
@@ -527,7 +503,7 @@ form {
 }
 
 .departure-arrival-toggle-green input[type="radio"]:checked + label {
-    background-color: #629D5E;
+    background-color: #152214;
     color: #EDE9E9;
 }
 
@@ -568,7 +544,7 @@ form {
     margin-top: 2rem;
     border-radius: 2rem;
     border: 0.15rem solid #152214;
-    background-color: #dafad9;
+    background-color: #dbeadb;
     font-size: 1.5rem;
     font-weight: bold;
 }
