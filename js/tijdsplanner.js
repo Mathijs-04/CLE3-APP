@@ -15,7 +15,7 @@ function init() {
     console.log(selectToggle)
 
     Array.from(selectToggle).forEach(function(element) {
-        element.classList.add(`departure-arrival-toggle-${chosenColor}`);
         element.classList.remove("departure-arrival-toggle-blue");
+        element.classList.add(`departure-arrival-toggle-${chosenColor}`);
     });
 }
