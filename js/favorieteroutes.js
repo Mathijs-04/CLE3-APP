@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 let favoriteRoutesData = [];
 let main;
+
 // let chosenColor = '';
 
 function init() {
@@ -19,7 +20,6 @@ function getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('reisdata'));
     favoriteRoutesData = data || [];
 }
-
 
 
 function createDivs() {
