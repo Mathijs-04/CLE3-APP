@@ -6,23 +6,23 @@ function init() {
     try {
 
 
-    console.log('DOM loaded');
-    setChosenColorFromLocalStorage();
-    getFromLocalStorage();
-    const backButton = document.getElementById('back-button');
-    const submitButton = document.getElementById('submit-button');
+        console.log('DOM loaded');
+        setChosenColorFromLocalStorage();
+        getFromLocalStorage();
+        const backButton = document.getElementById('back-button');
+        const submitButton = document.getElementById('submit-button');
 
-    if (backButton) {
-        backButton.addEventListener('click', sendBack);
-    } else {
-        console.error('Back button not found');
-    }
+        if (backButton) {
+            backButton.addEventListener('click', sendBack);
+        } else {
+            console.error('Back button not found');
+        }
 
-    if (submitButton) {
-        submitButton.addEventListener('click', dataGetter);
-    } else {
-        console.error('Submit button not found');
-    }
+        if (submitButton) {
+            submitButton.addEventListener('click', dataGetter);
+        } else {
+            console.error('Submit button not found');
+        }
 
     } catch (error) {
         console.error('Error in init function', error);
