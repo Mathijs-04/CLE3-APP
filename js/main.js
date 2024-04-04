@@ -3,6 +3,11 @@ let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 let chosenColor;
 
 function init() {
+    try {
+
+
+    console.log('DOM loaded');
+    setChosenColorFromLocalStorage();
     getFromLocalStorage();
     const backButton = document.getElementById('back-button');
     const submitButton = document.getElementById('submit-button');
@@ -19,7 +24,11 @@ function init() {
         console.error('Submit button not found');
     }
 
-    setChosenColorFromLocalStorage();
+    } catch (error) {
+        console.error('Error in init function', error);
+    }
+
+
 }
 
 function sendBack() {
@@ -64,7 +73,9 @@ function getFromLocalStorage() {
 }
 
 function setChosenColorFromLocalStorage() {
+    console.log('Setting chosen color from local storage')
     chosenColor = localStorage.getItem("chosenColorApp");
+    console.log(chosenColor);
 
     if (chosenColor) {
         kleurMaker();
@@ -72,6 +83,7 @@ function setChosenColorFromLocalStorage() {
 }
 
 function kleurMaker() {
+    console.log('Setting color');
     let selectHeader = document.querySelector("header");
     if (!selectHeader) {
         console.error('Header element not found');

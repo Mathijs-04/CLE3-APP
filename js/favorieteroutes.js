@@ -20,9 +20,7 @@ function getFromLocalStorage() {
     favoriteRoutesData = data || [];
 }
 
-function setChosenColorFromLocalStorage() {
-    chosenColor = localStorage.getItem("chosenColorApp");
-}
+
 
 function createDivs() {
     main.innerHTML = '';
