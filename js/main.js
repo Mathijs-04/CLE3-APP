@@ -8,13 +8,13 @@ function init() {
     const backButton = document.getElementById('back-button');
     const submitButton = document.getElementById('submit-button');
 
-    if(backButton) {
+    if (backButton) {
         backButton.addEventListener('click', sendBack);
     } else {
         console.error('Back button not found');
     }
 
-    if(submitButton) {
+    if (submitButton) {
         submitButton.addEventListener('click', dataGetter);
     } else {
         console.error('Submit button not found');
@@ -23,12 +23,12 @@ function init() {
     setChosenColorFromLocalStorage();
 }
 
-function sendBack (){
+function sendBack() {
     console.log('clicked on back button');
     window.history.back();
 }
 
-function dataGetter (event) {
+function dataGetter(event) {
     event.preventDefault(event);
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
@@ -38,21 +38,25 @@ function dataGetter (event) {
     console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
+
     window.location.href = 'tijdsplanner.html';
 }
 
 function dataStorer(infoVanValue, infoNaarValue) {
-    // Retrieve existing routes data from local storage
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
+    let favoriteData = JSON.parse(localStorage.getItem('favoritedata')) || [];
 
-    // Create the new route object
-    const dataAdd = { van: infoVanValue, naar: infoNaarValue };
+    const dataAdd = {van: infoVanValue, naar: infoNaarValue};
 
-    // Append the new route to the existing routes data
     existingData.push(dataAdd);
 
-    // Store the updated routes data back to local storage
+    const opslaanCheckbox = document.getElementById('opslaan');
+    if (opslaanCheckbox && opslaanCheckbox.checked) {
+        favoriteData.push(dataAdd);
+    }
+
     localStorage.setItem('reisdata', JSON.stringify(existingData));
+    localStorage.setItem('favoritedata', JSON.stringify(favoriteData));
 }
 
 
@@ -92,22 +96,18 @@ function kleurMaker() {
         headerLogoImage.src = `./img/logo-${chosenColor}.png`;
     }
 
-    let submitbutton = document.querySelector('button');
+    let mainLogo = document.getElementById('reisrust-logo');
+    let mainLogoImage = mainLogo.querySelector("img")
 
-    submitbutton.classList.add(`submit-button-${chosenColor}`)
-
-    let inputFields = document.querySelectorAll('input');
-
-    inputFields.forEach(function(inputField) {
-        inputField.classList.add(`input-${chosenColor}`);
-    });
-
-    let selectText = document.getElementsByClassName("blue-text")
-    console.log(selectText)
-
-    for (let i = 0; i < selectText.length; i++) {
-        selectText[i].classList.add(`${chosenColor}-text`);
-        selectText[i].classList.remove("blue-text");
+    if (mainLogoImage && chosenColor) {
+        // Pas de bron van de afbeelding aan met de nieuwe kleur
+        mainLogoImage.src = `./img/reisrust-${chosenColor}.png`;
     }
 
+    let submitbutton = document.getElementById('submit-button');
+    console.log(submitbutton)
+    let submitButtonChange = submitbutton.querySelector("button")
+
+    submitButtonChange.className = '';
+    submitButtonChange.classList.add(`header-${chosenColor}`)
 }
