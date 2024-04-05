@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    let date = document.getElementById('date');
-    let time = document.getElementById('time');
-    let route = document.getElementById('route');
+    let dateDiv = document.getElementById('date');
+    let timeDiv = document.getElementById('time');
+    let routeDiv = document.getElementById('route');
 
-    if (date && time && route) {
-        console.log(date.textContent);
-        console.log(time.textContent);
-        console.log(route.textContent);
+    if (dateDiv && timeDiv && routeDiv) {
+        console.log(dateDiv.textContent);
+        console.log(timeDiv.textContent);
+        console.log(routeDiv.textContent);
     } else {
         console.log('One or more elements not found');
     }
