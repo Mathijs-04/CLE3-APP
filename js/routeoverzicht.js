@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', init);
 
+let dateData = localStorage.getItem('dateData') || 'Geen datum ingevoerd';
+let timeData = localStorage.getItem('timeData') || 'Geen tijd ingevoerd';
+let routeData = localStorage.getItem('routeData') || 'Geen route ingevoerd';
+
 function init() {
     let dateDiv = document.getElementById('date');
     let timeDiv = document.getElementById('time');
