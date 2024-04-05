@@ -20,7 +20,8 @@ function init() {
     let routeDiv = document.getElementById('route');
 
     if (dateDiv && timeDiv && routeDiv) {
-        dateDiv.textContent = dateData || 'Geen datum ingevoerd';
+        let formattedDate = dateData ? new Date(dateData).toLocaleDateString('en-GB') : 'Geen datum ingevoerd';
+        dateDiv.textContent = formattedDate;
         timeDiv.textContent = timeDataValue || 'Geen tijd ingevoerd';
         routeDiv.textContent = routeData ? `${routeData.van} > ${routeData.naar}` : 'Geen route ingevoerd';
     } else {
