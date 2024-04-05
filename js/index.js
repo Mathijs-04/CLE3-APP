@@ -9,6 +9,7 @@ let detailsModalCloseButton;
 // let chosenColor;
 
 function init() {
+    chosenColor = localStorage.getItem("chosenColorApp") || "blue";
 
     // Event listeners toevoegen
     const opgeslagenRoutesButton = document.getElementById('nieuwe-route-button');
@@ -20,7 +21,6 @@ function init() {
     settings = document.getElementById('setting-modal');
     settings.addEventListener('click', detailsModalInfo);
 
-    chosenColor = localStorage.getItem("chosenColorApp");
 
 // Kleuren van de website body
     let selectBody = document.querySelector("body")

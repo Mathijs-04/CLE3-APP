@@ -90,7 +90,7 @@ function getFromLocalStorage() {
 
 function setChosenColorFromLocalStorage() {
     console.log('Setting chosen color from local storage')
-    chosenColor = localStorage.getItem("chosenColorApp");
+    chosenColor = localStorage.getItem("chosenColorApp") || "blue";
     console.log(chosenColor);
 
     if (chosenColor) {

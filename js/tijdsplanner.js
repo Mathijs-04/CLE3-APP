@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    chosenColor = localStorage.getItem("chosenColorApp");
+    chosenColor = localStorage.getItem("chosenColorApp") || "blue";
 
     const submitButton = document.getElementById('submit-button');
 
