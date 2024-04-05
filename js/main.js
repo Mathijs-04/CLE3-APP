@@ -52,14 +52,15 @@ function dataGetter(event) {
     const input2 = document.getElementById('naar');
 
     if (input1.value !== "" && input2.value !== "") {
-    window.location.href = 'tijdsplanner.html';
-} else {
+        window.location.href = 'tijdsplanner.html';
+    } else {
         const errorP = document.createElement('p');
         const main = document.querySelector('main');
         errorP.innerHTML = 'Vul de gegevens in!';
         main.appendChild(errorP);
 
-        console.log('gang')}
+        console.log('gang')
+    }
 }
 
 function timeGetter() {
