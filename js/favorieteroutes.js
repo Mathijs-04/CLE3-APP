@@ -17,7 +17,7 @@ function init() {
 }
 
 function getFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('reisdata'));
+    const data = JSON.parse(localStorage.getItem('favoritedata'));
     favoriteRoutesData = data || [];
 }
 
