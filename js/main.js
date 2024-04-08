@@ -22,6 +22,7 @@ function init() {
             submitButton.addEventListener('click', dataGetter);
         } else {
             console.error('Submit button not found');
+
         }
 
     } catch (error) {
@@ -47,7 +48,19 @@ function dataGetter(event) {
 
     dataStorer(infoVanValue, infoNaarValue);
 
-    window.location.href = 'tijdsplanner.html';
+    const input1 = document.getElementById('van');
+    const input2 = document.getElementById('naar');
+
+    if (input1.value !== "" && input2.value !== "") {
+        window.location.href = 'tijdsplanner.html';
+    } else {
+        const errorP = document.createElement('p');
+        const main = document.querySelector('main');
+        errorP.innerHTML = 'Vul de gegevens in!';
+        main.appendChild(errorP);
+
+        console.log('gang')
+    }
 }
 
 function timeGetter() {

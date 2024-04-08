@@ -21,7 +21,6 @@ function getFromLocalStorage() {
     favoriteRoutesData = data || [];
 }
 
-
 function createDivs() {
     main.innerHTML = '';
     favoriteRoutesData.forEach(routeData => {
