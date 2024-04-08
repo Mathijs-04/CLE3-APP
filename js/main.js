@@ -4,8 +4,6 @@ let chosenColor;
 
 function init() {
     try {
-
-
         console.log('DOM loaded');
         setChosenColorFromLocalStorage();
         getFromLocalStorage();
@@ -28,8 +26,6 @@ function init() {
     } catch (error) {
         console.error('Error in init function', error);
     }
-
-
 }
 
 function sendBack() {
