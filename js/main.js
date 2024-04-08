@@ -138,8 +138,8 @@ function kleurMaker() {
     let selectText = document.getElementsByClassName("blue-text")
 
     Array.from(selectText).forEach(function (element) {
-        element.classList.add(`${chosenColor}-text`);
         element.classList.remove("blue-text");
+        element.classList.add(`${chosenColor}-text`);
     });
 
     let submitbutton = document.getElementById('submit-button');
