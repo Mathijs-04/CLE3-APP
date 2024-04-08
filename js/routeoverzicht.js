@@ -41,6 +41,8 @@ function init() {
     }
 
     if (routeData && routeData.naar === 'Malevelon Creek') {
-
+        let img = document.createElement('img');
+        img.src = './img/helldivers.gif';
+        easterEgg.appendChild(img);
     }
 }
