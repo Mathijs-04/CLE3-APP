@@ -40,6 +40,7 @@ function init() {
         console.log('One or more elements not found');
     }
 
+    //Easter Egg van Mathijs voor eigen signatuur
     if (routeData && routeData.naar === 'Malevelon Creek') {
         let img = document.createElement('img');
         img.src = './img/helldivers.gif';
