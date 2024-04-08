@@ -41,7 +41,7 @@ function init() {
     }
 
     //Easter Egg van Mathijs voor eigen signatuur
-    if (routeData && routeData.naar === 'Malevelon Creek' || 'Malevelon creek' || 'malevelon creek') {
+    if (routeData && (routeData.naar === 'Malevelon Creek' || routeData.naar === 'Malevelon creek' || routeData.naar === 'malevelon creek')) {
         let img = document.createElement('img');
         img.src = './img/helldivers.gif';
         easterEgg.appendChild(img);
