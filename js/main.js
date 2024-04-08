@@ -38,28 +38,26 @@ function sendBack() {
 }
 
 function dataGetter(event) {
-    event.preventDefault(event);
+    event.preventDefault(); // prevent form submission in all cases
+
     const infoVan = document.getElementById('van');
     const infoVanValue = infoVan.value;
-    console.log(infoVanValue);
     const infoNaar = document.getElementById('naar');
     const infoNaarValue = infoNaar.value;
-    console.log(infoNaarValue);
 
     dataStorer(infoVanValue, infoNaarValue);
 
-    const input1 = document.getElementById('van');
-    const input2 = document.getElementById('naar');
-
-    if (input1.value !== "" && input2.value !== "") {
-        window.location.href = 'tijdsplanner.html';
+    if (infoVanValue !== "" && infoNaarValue !== "") {
+        window.location.href = 'tijdsplanner.html'; // manually redirect when inputs are not empty
     } else {
-        const errorP = document.createElement('p');
         const main = document.querySelector('main');
-        errorP.innerHTML = 'Vul de gegevens in!';
-        main.appendChild(errorP);
-
-        console.log('gang')
+        const existingErrorP = document.querySelector('main p.error-message');
+        if (!existingErrorP) {
+            const errorP = document.createElement('p');
+            errorP.className = 'error-message';
+            errorP.innerHTML = 'Vul de gegevens in!';
+            main.appendChild(errorP);
+        }
     }
 }
 
@@ -71,13 +69,24 @@ function timeGetter() {
         const datumValue = datum.value;
         const tijdValue = tijd.value;
 
-        const timeData = {datum: datumValue, tijd: tijdValue};
-
-        localStorage.setItem('timeData', JSON.stringify(timeData));
+        if (datumValue !== "" && tijdValue !== "") {
+            const timeData = {datum: datumValue, tijd: tijdValue};
+            localStorage.setItem('timeData', JSON.stringify(timeData));
+        } else {
+            const main = document.querySelector('main');
+            const existingErrorP = document.querySelector('main p.error-message');
+            if (!existingErrorP) {
+                const errorP = document.createElement('p');
+                errorP.className = 'error-message';
+                errorP.innerHTML = 'Vul de gegevens in!';
+                main.appendChild(errorP);
+            }
+        }
     } else {
         console.error('Date or time input not found');
     }
 }
+
 function timeGetter() {
     const datum = document.getElementById('datum');
     const tijd = document.getElementById('tijd');

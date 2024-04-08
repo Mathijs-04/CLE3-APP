@@ -7,9 +7,25 @@ function init() {
 
     if (submitButton) {
         submitButton.addEventListener('click', function (event) {
-            event.preventDefault();
+            event.preventDefault(); // prevent form submission in all cases
+
             timeGetter();
-            window.location.href = 'routeoverzicht.html';
+
+            const datum = document.getElementById('datum');
+            const tijd = document.getElementById('tijd');
+
+            if (datum.value !== "" && tijd.value !== "") {
+                window.location.href = 'routeoverzicht.html'; // manually redirect when inputs are not empty
+            } else {
+                const main = document.querySelector('main');
+                const existingErrorP = document.querySelector('main p.error-message');
+                if (!existingErrorP) {
+                    const errorP = document.createElement('p');
+                    errorP.className = 'error-message';
+                    errorP.innerHTML = 'Vul de gegevens in!';
+                    main.appendChild(errorP);
+                }
+            }
         });
     } else {
         console.error('Submit button not found');
