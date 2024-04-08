@@ -1,7 +1,6 @@
 window.addEventListener('load', init);
 let reisdata = JSON.parse(localStorage.getItem('pairs')) || [];
 let chosenColor;
-let arrival = false;
 
 function init() {
     try {
@@ -155,11 +154,4 @@ function kleurMaker() {
         inputField.classList.remove("input-blue");
         inputField.classList.add(`input-${chosenColor}`);
     });
-}
-
-function arrivalManager() {
-    let vertrekButton = document.getElementById('vertrek-button');
-    if (vertrekButton) {
-        arrival = false;
-    }
 }
