@@ -77,6 +77,22 @@ function timeGetter() {
         console.error('Date or time input not found');
     }
 }
+function timeGetter() {
+    const datum = document.getElementById('datum');
+    const tijd = document.getElementById('tijd');
+
+    if (datum && tijd) {
+        const datumValue = datum.value;
+        const tijdValue = tijd.value;
+
+        const timeData = {datum: datumValue, tijd: tijdValue};
+
+        localStorage.setItem('timeData', JSON.stringify(timeData));
+    } else {
+        console.error('Date or time input not found');
+    }
+}
+
 
 function dataStorer(infoVanValue, infoNaarValue) {
     let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
@@ -146,7 +162,7 @@ function kleurMaker() {
     if (submitbutton) {
         submitbutton.classList.add(`submit-button-${chosenColor}`);
     }
-
+    // voegd kleur toe aan input velden LLMAO
     let inputFields = document.getElementsByClassName("input-blue")
     console.log(inputFields)
     Array.from(inputFields).forEach(function (inputField) {
