@@ -21,9 +21,20 @@ function init() {
 
     if (dateDiv && timeDiv && routeDiv) {
         let formattedDate = dateData ? new Date(dateData).toLocaleDateString('en-GB') : 'Geen datum ingevoerd';
-        dateDiv.textContent = formattedDate;
-        timeDiv.textContent = timeDataValue || 'Geen tijd ingevoerd';
-        routeDiv.textContent = routeData ? `${routeData.van} > ${routeData.naar}` : 'Geen route ingevoerd';
+        let pDate = document.createElement('p');
+        pDate.textContent = formattedDate;
+        pDate.classList.add('blue-text');
+        dateDiv.appendChild(pDate);
+
+        let pTime = document.createElement('p');
+        pTime.textContent = timeDataValue || 'Geen tijd ingevoerd';
+        pTime.classList.add('blue-text');
+        timeDiv.appendChild(pTime);
+
+        let pRoute = document.createElement('p');
+        pRoute.textContent = routeData ? `${routeData.van} > ${routeData.naar}` : 'Geen route ingevoerd';
+        pRoute.classList.add('blue-text');
+        routeDiv.appendChild(pRoute);
     } else {
         console.log('One or more elements not found');
     }
