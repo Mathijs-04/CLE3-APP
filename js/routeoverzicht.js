@@ -18,6 +18,7 @@ function init() {
     let dateDiv = document.getElementById('date');
     let timeDiv = document.getElementById('time');
     let routeDiv = document.getElementById('route');
+    let easterEgg = document.getElementById('easter-egg');
 
     if (dateDiv && timeDiv && routeDiv) {
         let formattedDate = dateData ? new Date(dateData).toLocaleDateString('en-GB') : 'Geen datum ingevoerd';
