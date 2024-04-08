@@ -31,8 +31,7 @@ function createDivs() {
 
 function fillDivs(div, data) {
     const deleteButton = document.createElement('p');
-    deleteButton.classList.add('delete');
-    deleteButton.classList.add('blue-text');
+    deleteButton.classList.add('delete', 'blue-text');
     deleteButton.innerHTML = '<img src="./img/Xbutton.png" alt="X">';
     deleteButton.addEventListener('click', removeFromLocalStorage);
     div.appendChild(deleteButton);
