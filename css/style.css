@@ -161,7 +161,7 @@ form {
     height: 1rem;
 }
 
-.opslaanText {
+#opslaanText {
     margin-top:-0.3rem;
     font-size: 1.5rem;
 }
