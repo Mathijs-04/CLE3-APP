@@ -38,4 +38,8 @@ function init() {
     } else {
         console.log('One or more elements not found');
     }
+
+    if (routeData && routeData.naar === 'Malevelon Creek') {
+        // Easter egg code goes here
+    }
 }
