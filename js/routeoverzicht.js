@@ -41,6 +41,6 @@ function init() {
     }
 
     if (routeData && routeData.naar === 'Malevelon Creek') {
-        // Easter egg code goes here
+
     }
 }
