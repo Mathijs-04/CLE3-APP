@@ -55,6 +55,6 @@ function fillDivs(div, data) {
 function removeFromLocalStorage(event, div) {
     const index = Array.from(main.children).indexOf(div);
     favoriteRoutesData.splice(index, 1);
-    localStorage.setItem('reisdata', JSON.stringify(favoriteRoutesData));
+    localStorage.setItem('favoritedata', JSON.stringify(favoriteRoutesData));
     createDivs();
 }
