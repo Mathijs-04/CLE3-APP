@@ -34,7 +34,7 @@ function fillDivs(div, data) {
     deleteButton.classList.add('delete', 'blue-text');
     deleteButton.innerHTML = '<img src="./img/Xbutton.png" alt="X">';
     deleteButton.addEventListener('click', function(event) {
-        event.stopPropagation(); // stop the click event from propagating to the parent div
+        event.stopPropagation();
         removeFromLocalStorage(event, div);
     });
     div.appendChild(deleteButton);
