@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', init);
 let favoriteRoutesData = [];
 let main;
 
-// let chosenColor = '';
-
 function init() {
     main = document.querySelector('main');
     if (main) {
@@ -33,8 +31,7 @@ function createDivs() {
 
 function fillDivs(div, data) {
     const deleteButton = document.createElement('p');
-    deleteButton.classList.add('delete');
-    deleteButton.classList.add('blue-text');
+    deleteButton.classList.add('delete', 'blue-text');
     deleteButton.innerHTML = '<img src="./img/Xbutton.png" alt="X">';
     deleteButton.addEventListener('click', removeFromLocalStorage);
     div.appendChild(deleteButton);
@@ -43,6 +40,13 @@ function fillDivs(div, data) {
     fromTo.innerHTML = `${data.van} > ${data.naar}`;
     fromTo.classList.add('blue-text');
     div.appendChild(fromTo);
+
+    div.addEventListener('click', function () {
+        let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
+        existingData.push(data);
+        localStorage.setItem('reisdata', JSON.stringify(existingData));
+        window.location.href = 'tijdsplanner.html';
+    });
 }
 
 function removeFromLocalStorage(event) {

@@ -18,13 +18,32 @@ function init() {
     let dateDiv = document.getElementById('date');
     let timeDiv = document.getElementById('time');
     let routeDiv = document.getElementById('route');
+    let easterEgg = document.getElementById('easter-egg');
 
     if (dateDiv && timeDiv && routeDiv) {
         let formattedDate = dateData ? new Date(dateData).toLocaleDateString('en-GB') : 'Geen datum ingevoerd';
-        dateDiv.textContent = formattedDate;
-        timeDiv.textContent = timeDataValue || 'Geen tijd ingevoerd';
-        routeDiv.textContent = routeData ? `${routeData.van} > ${routeData.naar}` : 'Geen route ingevoerd';
+        let pDate = document.createElement('p');
+        pDate.textContent = formattedDate;
+        pDate.classList.add('blue-text');
+        dateDiv.appendChild(pDate);
+
+        let pTime = document.createElement('p');
+        pTime.textContent = timeDataValue || 'Geen tijd ingevoerd';
+        pTime.classList.add('blue-text');
+        timeDiv.appendChild(pTime);
+
+        let pRoute = document.createElement('p');
+        pRoute.textContent = routeData ? `${routeData.van} > ${routeData.naar}` : 'Geen route ingevoerd';
+        pRoute.classList.add('blue-text');
+        routeDiv.appendChild(pRoute);
     } else {
         console.log('One or more elements not found');
+    }
+
+    //Easter Egg van Mathijs voor eigen signatuur
+    if (routeData && (routeData.naar === 'Malevelon Creek' || routeData.naar === 'Malevelon creek' || routeData.naar === 'malevelon creek')) {
+        let img = document.createElement('img');
+        img.src = './img/helldivers.gif';
+        easterEgg.appendChild(img);
     }
 }
