@@ -33,7 +33,10 @@ function fillDivs(div, data) {
     const deleteButton = document.createElement('p');
     deleteButton.classList.add('delete', 'blue-text');
     deleteButton.innerHTML = '<img src="./img/Xbutton.png" alt="X">';
-    deleteButton.addEventListener('click', removeFromLocalStorage);
+    deleteButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // stop the click event from propagating to the parent div
+        removeFromLocalStorage(event, div);
+    });
     div.appendChild(deleteButton);
 
     const fromTo = document.createElement('p');
@@ -49,8 +52,8 @@ function fillDivs(div, data) {
     });
 }
 
-function removeFromLocalStorage(event) {
-    const index = Array.from(this.parentNode.parentNode.children).indexOf(this.parentNode);
+function removeFromLocalStorage(event, div) {
+    const index = Array.from(main.children).indexOf(div);
     favoriteRoutesData.splice(index, 1);
     localStorage.setItem('reisdata', JSON.stringify(favoriteRoutesData));
     createDivs();
