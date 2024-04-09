@@ -97,7 +97,9 @@ form {
 
 /* Route overzicht */
 
-/**/
+.mainRoute {
+    margin-top: 10vh;
+}
 
 
 /* Blue */
