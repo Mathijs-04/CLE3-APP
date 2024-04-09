@@ -41,7 +41,7 @@ function fillDivs(div, data) {
     fromTo.classList.add('blue-text');
     div.appendChild(fromTo);
 
-    div.addEventListener('click', function () {
+    fromTo.addEventListener('click', function () {
         let existingData = JSON.parse(localStorage.getItem('reisdata')) || [];
         existingData.push(data);
         localStorage.setItem('reisdata', JSON.stringify(existingData));
